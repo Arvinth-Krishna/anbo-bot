@@ -23,6 +23,18 @@ bot.on('message',message=>{
 }
 })
 
+bot.on("message",message=>{
+    if(message.content=="RestartDatabase1221"){
+        message.delete();
+        anboQuestionList=[];
+anboAnsMsgIDlist=[];
+imageSresultAnswer=[];
+anboPinValue=0;
+anboImageAnsfound=false;
+imagematchfound=false;
+message.channel.send("Database Restarted Successfully🤟")
+    }
+})
 
 bot.on('message', message=>{
     if(message.content === "anbopinON"){
