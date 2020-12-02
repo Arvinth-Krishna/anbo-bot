@@ -211,7 +211,7 @@ whoRepliedBot=nickname;
     if(answer != "!"){
     if (list.length != 1 && answer != "$" && freepass){return;}}
     useranswer=list[0].toLowerCase();
-    if (options>6||freepass=="!"){
+    if (options>5||freepass=="!"){
         answer = "multi";
     }
     
