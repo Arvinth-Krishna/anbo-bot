@@ -272,7 +272,7 @@ whoRepliedBot=nickname;
          }
 
          
-        if((answer != "$" && answer !="multiC")){     anbomsg=listAns[0] +'\n' +Ans+'\n'+'\n'+"🥳"+ '**Answer: **'+answerName.toUpperCase()+'\n'+"Answered by ➪"+who+'\n'+ "+ミ★ ###################### ★彡"+'\n' +"```"+'**'
+        if((answer != "$" && answer !="multiC")){     anbomsg=listAns[0] +'\n' +Ans+'\n'+'\n'+"🥳"+ '**Answer: **'+answerName.toUpperCase()+'\n'+"Answered by ➪"+who+'\n'+ '**'+"```diff"+'\n' + "+ミ★ ###################### ★彡"+'\n' +"```"+'**'
         }else if(attachmentTorF){
             linkINtext="";
             tempAttachmentFileList.forEach(element => {
@@ -283,7 +283,7 @@ whoRepliedBot=nickname;
             
             anbomsg=message.content
         }else{
-            anbomsg=listAns[0] +'\n' +Ans+'\n'+'\n'+"🥳"+ '**Answer: **'+answerdes+'\n'+"Answered by ➪"+who+'\n'+ "+ミ★ ###################### ★彡"+'\n' +"```"+'**'
+            anbomsg=listAns[0] +'\n' +Ans+'\n'+'\n'+"🥳"+ '**Answer: **'+answerdes+'\n'+"Answered by ➪"+who+'\n'+ '**'+"```diff"+'\n' + "+ミ★ ###################### ★彡"+'\n' +"```"+'**'
         }
 
         if(attachmentTorF== true){
