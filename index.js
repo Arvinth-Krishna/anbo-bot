@@ -264,7 +264,7 @@ whoRepliedBot=nickname;
              if ((useranswer == 'a' || useranswer == 'b') || (useranswer == 'c' || useranswer == 'd')|| (useranswer == '$' || useranswer == 'd')){
                  answer="multiC"
              }else if(useranswer == '!'){
-                anbomsg=listAns[0] +'\n' +Ans+'\n'+'\n'+'**'+"```css"+'\n' + "[Answer is not sure]"+'\n' +"```"+'**'+'\n'+"Answered by ➪"+who+'\n'+ '**'+"```diff"+'\n' + "+_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷+"+'\n' +"```"+'**'
+                anbomsg=listAns[0] +'\n' +Ans+'\n'+'\n'+'**'+"```css"+'\n' + "[Answer is not sure]"+'\n' +"```"+'**'+'\n'+"Answered by ➪"+who+'\n'+ 'ミ★ ------------------------------------------------- ★彡'
 
              }else{
                  return;
@@ -272,7 +272,7 @@ whoRepliedBot=nickname;
          }
 
          
-        if((answer != "$" && answer !="multiC")){     anbomsg=listAns[0] +'\n' +Ans+'\n'+'\n'+"🥳"+ '**Answer: **'+answerName.toUpperCase()+'\n'+"Answered by ➪"+who+'\n'+ '**'+"```diff"+'\n' + "+_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷+"+'\n' +"```"+'**'
+        if((answer != "$" && answer !="multiC")){     anbomsg=listAns[0] +'\n' +Ans+'\n'+'\n'+"🥳"+ '**Answer: **'+answerName.toUpperCase()+'\n'+"Answered by ➪"+who+'\n'+ 'ミ★ ------------------------------------------------- ★彡'
         }else if(attachmentTorF){
             linkINtext="";
             tempAttachmentFileList.forEach(element => {
@@ -283,7 +283,7 @@ whoRepliedBot=nickname;
             
             anbomsg=message.content
         }else{
-            anbomsg=listAns[0] +'\n' +Ans+'\n'+'\n'+"🥳"+ '**Answer: **'+answerdes+'\n'+"Answered by ➪"+who+'\n'+ '**'+"```diff"+'\n' + "+_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷_̷+"+'\n' +"```"+'**'
+            anbomsg=listAns[0] +'\n' +Ans+'\n'+'\n'+"🥳"+ '**Answer: **'+answerdes+'\n'+"Answered by ➪"+who+'\n'+ 'ミ★ ------------------------------------------------- ★彡'
         }
 
         if(attachmentTorF== true){
