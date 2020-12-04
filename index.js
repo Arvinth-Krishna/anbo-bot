@@ -498,19 +498,34 @@ message.delete();
   });
             break;
         case 'ample':
-            message.channel.send('https://ample.amrita.edu/ssologin?tenant=CB'+"\n"+'https://ample.amrita.edu/ssologin?tenant=CB');
+message.delete();
+            message.channel.send('https://ample.amrita.edu/ssologin?tenant=CB'+"\n"+'https://ample.amrita.edu/ssologin?tenant=CB').then(msg => {
+    msg.delete({ timeout: 10000 })
+  });
             break;
         case 'intranet':
-            message.channel.send('https://intranet.cb.amrita.edu/'+"\n"+'https://intranet.cb.amrita.edu/');
+message.delete();
+            message.channel.send('https://intranet.cb.amrita.edu/'+"\n"+'https://intranet.cb.amrita.edu/').then(msg => {
+    msg.delete({ timeout: 10000 })
+  });
             break;
         case 'exam':
-                message.channel.send('https://exam.amrita.ac.in/'+"\n"+'https://exam.amrita.ac.in/');
+message.delete();
+                message.channel.send('https://exam.amrita.ac.in/'+"\n"+'https://exam.amrita.ac.in/').then(msg => {
+    msg.delete({ timeout: 10000 })
+  });
                 break;
         case 'cms':
-                message.channel.send('https://cms.cb.amrita.edu/login'+"\n"+'https://cms.cb.amrita.edu/login');
+message.delete();
+                message.channel.send('https://cms.cb.amrita.edu/login'+"\n"+'https://cms.cb.amrita.edu/login').then(msg => {
+    msg.delete({ timeout: 10000 })
+  });
                 break;
         case 'gak':
-               message.channel.send('https://arvinth-krishna.github.io/amritalinks/'+"\n"+'https://arvinth-krishna.github.io/amritalinks/');
+message.delete();
+               message.channel.send('https://arvinth-krishna.github.io/amritalinks/'+"\n"+'https://arvinth-krishna.github.io/amritalinks/').then(msg => {
+    msg.delete({ timeout: 10000 })
+  });
                break;
         case 'start':
                message.channel.send("👋Hey, I'm Anbo"+"\n"+"- Answer Assistant bot"+"\n"+"**I will track the Answer** which is tagged to the question."+"\n"+
