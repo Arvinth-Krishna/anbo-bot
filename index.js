@@ -395,6 +395,7 @@ bot.on('message', message => {
 
 
     anboQuestionList.forEach(element => {
+                questionFromUser="**"+questionFromUser+"**"
 
 
         if (element == questionFromUser) {
