@@ -492,7 +492,10 @@ bot.on('message', message=>{
    switch(links){
 
        case 'aums':
-           message.channel.send('https://aumscb.amrita.edu/aums/Jsp/Core_Common/indexIPad.jsp?task=off');
+message.delete();
+           message.channel.send('https://aumscb.amrita.edu/aums/Jsp/Core_Common/indexIPad.jsp?task=off').then(msg => {
+    msg.delete({ timeout: 10000 })
+  });
             break;
         case 'ample':
             message.channel.send('https://ample.amrita.edu/ssologin?tenant=CB'+"\n"+'https://ample.amrita.edu/ssologin?tenant=CB');
