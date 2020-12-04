@@ -20,7 +20,7 @@ bot.on('message', message => {
     if (message.author.bot) return;
     if (message.channel.id == '781026992786243584') {
         message.channel.send("No no no!! 😊I'm too shy to chat alone...");
-        message.channel.send(". \nSo let's chat in **#🔍_anbo-search** channel✌ in [Oii grp of companies ltd](<https://discord.com/channels/780352246546169856/781451444888666123/781452522623074335>) group");
+        message.channel.send(". \nSo let's chat in **#💬_oii-chat** channel✌ in [Oii grp of companies ltd](<https://discord.com/channels/780352246546169856/781451444888666123/781452522623074335>) group");
     }
 })
 
