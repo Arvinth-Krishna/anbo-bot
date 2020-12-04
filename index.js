@@ -264,11 +264,11 @@ bot.on('message', message => {
                             return;
                         }
 
-                        if (answer == "multi") {
+                         if (answer == "multi") {
                             if ((useranswer == 'a' || useranswer == 'b') || (useranswer == 'c' || useranswer == 'd') || (useranswer == '$' || useranswer == 'd')) {
                                 answer = "multiC"
                             } else if (useranswer == '!') {
-                                anbomsg = listAns[0] + '\n' + Ans + '\n' + '\n' + '**' + "```css" + '\n' + "[Answer is not sure]" + '\n' + "```" + '**' + '\n' + "Answered by ➪" + who + '\n' + '**' + "```diff" + '\n' + "+ミ★ ###################### ★彡" + '\n' + "```" + '**'
+                                anbomsg = "**" + listAns[0] + "**" + '\n' + Ans + '\n' + '\n' + '**' + "```css" + '\n' + "[Answer is not sure]" + '\n' + "```" + '**' + '\n' + "Answered by ➪" + who + '\n' + '**' + "```diff" + '\n' + "+ミ★ ###################### ★彡" + '\n' + "```" + '**'
 
                             } else {
                                 return;
@@ -277,7 +277,7 @@ bot.on('message', message => {
 
 
                         if ((answer != "$" && answer != "multiC")) {
-                            anbomsg = listAns[0] + '\n' + Ans + '\n' + '\n' + "🥳" + '**Answer: **' + answerName.toUpperCase() + '\n' + "Answered by ➪" + who + '\n' + '**' + "```diff" + '\n' + "+ミ★ ###################### ★彡" + '\n' + "```" + '**'
+                            anbomsg = "**" + listAns[0] + "**" + '\n' + Ans + '\n' + '\n' + "🥳" + '**Answer: **' + answerName.toUpperCase() + '\n' + "Answered by ➪" + who + '\n' + '**' + "```diff" + '\n' + "+ミ★ ###################### ★彡" + '\n' + "```" + '**'
                         } else if (attachmentTorF) {
                             linkINtext = "";
                             tempAttachmentFileList.forEach(element => {
@@ -288,7 +288,7 @@ bot.on('message', message => {
 
                             anbomsg = message.content
                         } else {
-                            anbomsg = listAns[0] + '\n' + Ans + '\n' + '\n' + "🥳" + '**Answer: **' + answerdes + '\n' + "Answered by ➪" + who + '\n' + '**' + "```diff" + '\n' + "+ミ★ ###################### ★彡" + '\n' + "```" + '**'
+                            anbomsg = "**" + listAns[0] + "**" + '\n' + Ans + '\n' + '\n' + "🥳" + '**Answer: **' + answerdes + '\n' + "Answered by ➪" + who + '\n' + '**' + "```diff" + '\n' + "+ミ★ ###################### ★彡" + '\n' + "```" + '**'
                         }
 
                         if (attachmentTorF == true) {
