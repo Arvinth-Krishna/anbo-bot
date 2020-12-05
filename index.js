@@ -1,5 +1,6 @@
-const { Client, MessageAttachment } = require('discord.js');
-const bot = new Client();
+const { Client, MessageAttachment, MessageReaction } = require('discord.js');
+const bot = new Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
+
 
 
 const PREFIX = '?';
@@ -264,11 +265,11 @@ bot.on('message', message => {
                             return;
                         }
 
-                         if (answer == "multi") {
+                        if (answer == "multi") {
                             if ((useranswer == 'a' || useranswer == 'b') || (useranswer == 'c' || useranswer == 'd') || (useranswer == '$' || useranswer == 'd')) {
                                 answer = "multiC"
                             } else if (useranswer == '!') {
-                                anbomsg =  listAns[0] +  '\n' + Ans + '\n' + '\n' + '**' + "```css" + '\n' + "[Answer is not sure]" + '\n' + "```" + '**' + '\n' + "Answered by ➪" + who + '\n' + '**' + "```diff" + '\n' + "+ミ★ ###################### ★彡" + '\n' + "```" + '**'
+                                anbomsg = listAns[0] + '\n' + Ans + '\n' + '\n' + '**' + "```css" + '\n' + "[Answer is not sure]" + '\n' + "```" + '**' + '\n' + "Answered by ➪" + who + '\n' + '**' + "```diff" + '\n' + "+ミ★ ###################### ★彡" + '\n' + "```" + '**'
 
                             } else {
                                 return;
@@ -277,7 +278,7 @@ bot.on('message', message => {
 
 
                         if ((answer != "$" && answer != "multiC")) {
-                            anbomsg =  listAns[0]  + '\n' + Ans + '\n' + '\n' + "🥳" + '**Answer: **' + answerName.toUpperCase() + '\n' + "Answered by ➪" + who + '\n' + '**' + "```diff" + '\n' + "+ミ★ ###################### ★彡" + '\n' + "```" + '**'
+                            anbomsg = listAns[0] + '\n' + Ans + '\n' + '\n' + "🥳" + '**Answer: **' + answerName.toUpperCase() + '\n' + "Answered by ➪" + who + '\n' + '**' + "```diff" + '\n' + "+ミ★ ###################### ★彡" + '\n' + "```" + '**'
                         } else if (attachmentTorF) {
                             linkINtext = "";
                             tempAttachmentFileList.forEach(element => {
@@ -288,7 +289,7 @@ bot.on('message', message => {
 
                             anbomsg = message.content
                         } else {
-                            anbomsg =  listAns[0] +'\n' + Ans + '\n' + '\n' + "🥳" + '**Answer: **' + answerdes + '\n' + "Answered by ➪" + who + '\n' + '**' + "```diff" + '\n' + "+ミ★ ###################### ★彡" + '\n' + "```" + '**'
+                            anbomsg = listAns[0] + '\n' + Ans + '\n' + '\n' + "🥳" + '**Answer: **' + answerdes + '\n' + "Answered by ➪" + who + '\n' + '**' + "```diff" + '\n' + "+ミ★ ###################### ★彡" + '\n' + "```" + '**'
                         }
 
                         if (attachmentTorF == true) {
@@ -548,10 +549,77 @@ bot.on('message', message => {
             bot.channels.cache.get('781018226988941314').send("Let's Roast Exams🔥");
             break;
 
+    }
+
+})
+
+bot.on('messageReactionAdd', async(reaction, user) => {
+    if (reaction.message.partial) await reaction.message.fetch();
+    if (reaction.partial) await reaction.fetch();
+    if (user.bot) return;
+    console.log(reaction)
+
+    if (!reaction.message.guild) return;
+
+    if (reaction.message.channel.id == "784412254589812746") {
+        if (reaction.emoji.name == '1️⃣') {
+            await reaction.message.guild.members.cache.get(user.id).roles.add("784405626318618624")
+        } else if (reaction.emoji.name == '2️⃣') {
+            await reaction.message.guild.members.cache.get(user.id).roles.add("784405736075558932")
+        } else if (reaction.emoji.name == '3️⃣') {
+            await reaction.message.guild.members.cache.get(user.id).roles.add("784405825710981150")
+        } else if (reaction.emoji.name == '4️⃣') {
+            await reaction.message.guild.members.cache.get(user.id).roles.add("784405862588481546")
+        } else if (reaction.emoji.name == '5️⃣') {
+            await reaction.message.guild.members.cache.get(user.id).roles.add("784405914069368843")
+        } else if (reaction.emoji.name == '6️⃣') {
+            await reaction.message.guild.members.cache.get(user.id).roles.add("784411672856887326")
+        }
 
 
     }
 
+
+
 })
+
+
+bot.on('messageReactionRemove', async(reaction, user) => {
+    if (reaction.message.partial) await reaction.message.fetch();
+    if (reaction.partial) await reaction.fetch();
+    if (user.bot) return;
+    console.log(reaction)
+
+    if (!reaction.message.guild) return;
+
+
+    if (reaction.message.channel.id == "784412254589812746") {
+        if (reaction.emoji.name == '1️⃣') {
+
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("784405626318618624")
+        } else if (reaction.emoji.name == '2️⃣') {
+
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("784405736075558932")
+        } else if (reaction.emoji.name == '3️⃣') {
+
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("784405825710981150")
+        } else if (reaction.emoji.name == '4️⃣') {
+
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("784405862588481546")
+        } else if (reaction.emoji.name == '5️⃣') {
+
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("784405914069368843")
+        } else if (reaction.emoji.name == '6️⃣') {
+
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("784411672856887326")
+        }
+
+
+    }
+
+
+
+})
+
 
 bot.login(process.env.TOKEN);
