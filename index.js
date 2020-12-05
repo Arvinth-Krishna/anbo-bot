@@ -1,5 +1,5 @@
-const { Client, MessageAttachment, MessageReaction } = require('discord.js');
-const bot = new Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
+const Discord = require('discord.js');
+const bot = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 
 
 
@@ -548,6 +548,20 @@ bot.on('message', message => {
             message.delete();
             bot.channels.cache.get('781018226988941314').send("Let's Roast Exams🔥");
             break;
+            case "elective":
+            message.delete();
+            const exampleEmbed = new Discord.MessageEmbed()
+                .setColor('#FFFF00')
+                .setTitle('Select Your Elective😇!!')
+                .setDescription(":one: **- Advanced Fluid Mechanics**" + "\n" + "\n" +
+                    ":two: **- Condition Monitoring and Diagnostic Maintenance**" + "\n" + "\n" +
+                    ":three: **- Materials Selection in Mechanical Design**" + "\n" + "\n" +
+                    ":four: **- Power Plant Engineering**" + "\n")
+                .setFooter("Oii grp of companies ltd")
+            message.channel.send(exampleEmbed)
+            break;
+            
+       
 
     }
 
