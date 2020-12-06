@@ -544,6 +544,16 @@ bot.on('message', message => {
             bot.channels.cache.get('780352246546169859').send("Let's Roast Exams🔥");
             bot.channels.cache.get('781526136898453525').send("Let's Roast Exams🔥");
             break;
+         case 'lreAll':
+            message.delete();
+            bot.channels.cache.get('781809921309278208').send("Let's Roast Exams🔥");
+            bot.channels.cache.get('780352246546169859').send("Let's Roast Exams🔥");
+            bot.channels.cache.get('781526136898453525').send("Let's Roast Exams🔥");
+            bot.channels.cache.get('784643032539988029').send("Let's Roast Exams🔥");
+            bot.channels.cache.get('784643725426294815').send("Let's Roast Exams🔥");
+            bot.channels.cache.get('784644311177232394').send("Let's Roast Exams🔥");
+            bot.channels.cache.get('784644490841292800').send("Let's Roast Exams🔥");
+            break;
         case "lregak":
             message.delete();
             bot.channels.cache.get('781018226988941314').send("Let's Roast Exams🔥");
