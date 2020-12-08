@@ -563,10 +563,12 @@ bot.on('message', message => {
             const exampleEmbed = new Discord.MessageEmbed()
                 .setColor('#FFFF00')
                 .setTitle('Select Your Elective😇!!')
-                .setDescription(":one: **- Advanced Fluid Mechanics**" + "\n" + "\n" +
-                    ":two: **- Condition Monitoring and Diagnostic Maintenance**" + "\n" + "\n" +
-                    ":three: **- Materials Selection in Mechanical Design**" + "\n" + "\n" +
-                    ":four: **- Power Plant Engineering**" + "\n")
+                .setDescription(":one: **- Advanced Materials & Processes**" + "\n" + "\n" +
+                    ":two: **- Automotive Chassis Design**" + "\n" + "\n" +
+                    ":three: **- IT Essentials**" + "\n" + "\n" +
+                    ":four: **- Lean Manufacturing**" + "\n" + "\n" +
+                    ":five: **- Supply Chain Management**" + "\n" + "\n" +
+                    ":six: **- Theory of Elasticity**" + "\n" + "_" + "\n")
                 .setFooter("Oii grp of companies ltd")
             message.channel.send(exampleEmbed)
             break;
