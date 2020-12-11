@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
+const token = 'NzgxMDE3NDc3ODE1NTk5MTA1.X73hNQ.KE8HUMMFRgH48koFxIxP_oKAsxI';
 
 
 
@@ -380,6 +381,9 @@ bot.on('message', message => {
 
     userInputScnt = message.content;
     mcqORnot = userInputScnt.split('\n');
+    spSearchkeywordpara = userInputScnt.split(" ");
+
+
 
     questionFromUser = mcqORnot[0];
     if (questionFromUser == "") { questionFromUser = mcqORnot[1] }
@@ -390,12 +394,15 @@ bot.on('message', message => {
     totalCount = 0;
     let anboSearchId = message.channel.id;
     console.log(message.channel.id);
+    spfreepass = false;
 
     ohNovalue = true;
     tempAnboSresult = [];
 
 
+
     anboQuestionList.forEach(element => {
+
         if (spSearchkeywordpara[0] == "#") {
             questionFromUser = questionFromUser.substring(2)
             re = RegExp(questionFromUser, "g");
@@ -403,13 +410,23 @@ bot.on('message', message => {
             console.log(resString)
             if (resString == null) {
                 spfreepass = false
+
             } else {
                 spfreepass = true;
+
             }
+
+
         }
+
 
         if ((element == questionFromUser) || spfreepass) {
             totalCount = totalCount + 1
+
+
+
+
+
             foundAnswer = anboAnsMsgIDlist[count]
 
             if (Array.isArray(foundAnswer)) {
@@ -549,7 +566,7 @@ bot.on('message', message => {
             bot.channels.cache.get('780352246546169859').send("Let's Roast Exams🔥");
             bot.channels.cache.get('781526136898453525').send("Let's Roast Exams🔥");
             break;
-         case 'lreAll':
+        case 'lreAll':
             message.delete();
             bot.channels.cache.get('781809921309278208').send("Let's Roast Exams🔥");
             bot.channels.cache.get('780352246546169859').send("Let's Roast Exams🔥");
@@ -563,7 +580,7 @@ bot.on('message', message => {
             message.delete();
             bot.channels.cache.get('781018226988941314').send("Let's Roast Exams🔥");
             break;
-            case "elective":
+        case "elective":
             message.delete();
             const exampleEmbed = new Discord.MessageEmbed()
                 .setColor('#FFFF00')
@@ -577,8 +594,8 @@ bot.on('message', message => {
                 .setFooter("Oii grp of companies ltd")
             message.channel.send(exampleEmbed)
             break;
-            
-       
+
+
 
     }
 
@@ -651,6 +668,4 @@ bot.on('messageReactionRemove', async(reaction, user) => {
 
 
 })
-
-
 bot.login(process.env.TOKEN);
