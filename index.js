@@ -396,15 +396,20 @@ bot.on('message', message => {
 
 
     anboQuestionList.forEach(element => {
+        if (spSearchkeywordpara[0] == "#") {
+            questionFromUser = questionFromUser.substring(2)
+            re = RegExp(questionFromUser, "g");
+            resString = element.match(re)
+            console.log(resString)
+            if (resString == null) {
+                spfreepass = false
+            } else {
+                spfreepass = true;
+            }
+        }
 
-
-        if (element == questionFromUser) {
+        if ((element == questionFromUser) || spfreepass) {
             totalCount = totalCount + 1
-
-
-
-
-
             foundAnswer = anboAnsMsgIDlist[count]
 
             if (Array.isArray(foundAnswer)) {
