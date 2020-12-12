@@ -401,7 +401,7 @@ bot.on('message', message => {
 
     anboQuestionList.forEach(element => {
 
-        if (spSearchkeywordpara[0] == "#") {
+        if (spSearchkeywordpara[0] == "#" || anboSearchId == "782069343478480916") {
             questionFromUser = questionFromUser.substring(2)
             re = RegExp(questionFromUser, "g");
             resString = element.match(re)
