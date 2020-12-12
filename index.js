@@ -592,6 +592,15 @@ bot.on('message', message => {
                 .setFooter("Oii grp of companies ltd")
             message.channel.send(exampleEmbed)
             break;
+        case "mechtt":
+        case "mech":
+        case "mee":
+            console.log("im in timetable")
+            message.delete();
+            message.channel.send("", { files: ["https://cdn.discordapp.com/attachments/787217077239808011/787242622761566259/BTechMEE_AL.png"] }).then(msg => {
+                msg.delete({ timeout: 60000 })
+            });
+            break;
 
 
 
