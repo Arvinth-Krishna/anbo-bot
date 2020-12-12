@@ -601,6 +601,15 @@ bot.on('message', message => {
                 msg.delete({ timeout: 60000 })
             });
             break;
+        case "academiccalendar":
+        case "ac":
+        case "calendar":
+            console.log("im inside the calendar")
+            message.delete();
+            message.channel.send("https://drive.google.com/file/d/1YrB7PzhVEB_4hH95_gxuL405_t87RMzT/view?usp=drivesdk").then(msg => {
+                msg.delete({ timeout: 20000 })
+            });
+            break;
 
 
 
