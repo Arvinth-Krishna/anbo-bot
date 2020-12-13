@@ -915,7 +915,7 @@ bot.on('message', message => {
                     }
                     break;
                 case 0:
-                    if (hr == 18 && min == 45) {
+                    if (hr == 23 && min == 20) {
                         colour = '#0099ff';
 
                         tableHeader = "**Friday's TimeTable**" +
