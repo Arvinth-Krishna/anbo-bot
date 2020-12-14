@@ -627,7 +627,7 @@ bot.on('message', message => {
         ControlELink1st = " "
         ControlELink2st = " "
     }
-    if (message.content === "timeloop") {
+    if (message.content === "timelooop") {
         var interval = setInterval(() => {
             d = new Date();
             hr = d.getHours();
@@ -1104,5 +1104,4 @@ bot.on('messageReactionRemove', async(reaction, user) => {
 
 
 
-bot.login(token);
 bot.login(process.env.TOKEN);
