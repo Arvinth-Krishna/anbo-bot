@@ -19,7 +19,8 @@ bot.on('ready', () => {
 
 bot.on('message', message => {
     if (message.author.bot) return;
-    if (message.channel.id == '781026992786243584') {
+    commandFORanbo = message.content;
+    if (message.channel.id == '781026992786243584' && (commandFORanbo[0][0] != "#")) {
         message.channel.send("No no no!! 😊I'm too shy to chat alone...");
         message.channel.send(". \nSo let's chat in **#💬_oii-chat** channel✌ in [Oii grp of companies ltd](<https://discord.com/channels/780352246546169856/781451444888666123/781452522623074335>) server");
     }
@@ -138,6 +139,8 @@ pinWarningValue = 0;
 
 bot.on('message', message => {
     if (message.author.bot) return;
+    if (message.channel.id == '781026992786243584') { return }
+
 
 
 
@@ -376,7 +379,7 @@ bot.on('message', message => {
 
 bot.on('message', message => {
     if (message.author.bot) return;
-
+    if (message.channel.id == '781026992786243584') { return }
 
     userInputScnt = message.content;
     mcqORnot = userInputScnt.split('\n');
@@ -505,6 +508,7 @@ bot.on('message', message => {
 
 
 bot.on('message', message => {
+
     let commandWord = message.content.substring(PREFIX.length).split(" ");
     links = commandWord[0].toLowerCase();
 
@@ -664,7 +668,7 @@ bot.on('message', message => {
                     } else if (hr == 10 && min == 50) {
                         colour = '#ff4646';
                         slot = 3;
-                        periodName = "Control Engineering(402)" + "\n" + "https://bit.ly/CEmonLink1MsTeams"
+                        periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + "https://bit.ly/CEmonLink1MsTeams"
                         Stime = "11:00-11:50am"
                         tableValue = 1
                     } else if (hr == 11 && min == 50) {
@@ -682,13 +686,13 @@ bot.on('message', message => {
                     } else if (hr == 14 && min == 50) {
                         colour = '#ff4646';
                         slot = 6;
-                        periodName = "Control Engineering(402)" + "\n" + "https://bit.ly/CEmonLink2MsTeams"
+                        periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + "https://bit.ly/CEmonLink2MsTeams"
                         Stime = "3:00-3:50pm"
                         tableValue = 1
                     } else if (hr == 15 && min == 50) {
                         colour = '#ff4646';
                         slot = 7;
-                        periodName = "Operations Research(411)" + "\n" + "https://bit.ly/OPmonLink1MsTeams"
+                        periodName = "Operations Research(411)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + "https://bit.ly/OPmonLink1MsTeams"
                         Stime = "4:00-4:50pm"
                         tableValue = 1
                     }
@@ -728,7 +732,7 @@ bot.on('message', message => {
                     } else if (hr == 11 && min == 50) {
                         colour = '#61b15a';
                         slot = 4;
-                        periodName = "Operations Research(411)" + "\n" + "https://bit.ly/OPtueLink1MsTeams"
+                        periodName = "Operations Research(411)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + "https://bit.ly/OPtueLink1MsTeams"
                         Stime = "12:00-12:50pm"
                         tableValue = 1
                     } else if (hr == 13 && min == 50) {
@@ -746,7 +750,7 @@ bot.on('message', message => {
                     } else if (hr == 15 && min == 50) {
                         colour = '#61b15a';
                         slot = 7;
-                        periodName = "Operations Research(411)" + "\n" + "https://bit.ly/OPtueLink2MsTeams"
+                        periodName = "Operations Research(411)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + "https://bit.ly/OPtueLink2MsTeams"
                         Stime = "4:00-4:50pm"
                         tableValue = 1
                     }
@@ -780,7 +784,7 @@ bot.on('message', message => {
                     } else if (hr == 10 && min == 50) {
                         colour = '#fc8621';
                         slot = 3;
-                        periodName = "Operations Research(411)" + "\n" + "https://bit.ly/OPwedLink1MsTeams"
+                        periodName = "Operations Research(411)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + "https://bit.ly/OPwedLink1MsTeams"
                         Stime = "11:00-11:50am"
                         tableValue = 1
                     } else if (hr == 11 && min == 50) {
@@ -843,7 +847,7 @@ bot.on('message', message => {
                     } else if (hr == 11 && min == 50) {
                         colour = '#9d0191';
                         slot = 4;
-                        periodName = "Operations Research(411)" + "\n" + "https://bit.ly/OPthursLink1MsTeams"
+                        periodName = "Operations Research(411)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + "https://bit.ly/OPthursLink1MsTeams"
                         Stime = "12:00-12:50am"
                         tableValue = 1
                     } else if (hr == 13 && min == 50) {
@@ -895,7 +899,7 @@ bot.on('message', message => {
                     } else if (hr == 10 && min == 50) {
                         colour = '#0099ff';
                         slot = 3;
-                        periodName = "Operations Research(411)" + "\n" + "https://bit.ly/OPfriLink1MsTeams"
+                        periodName = "Operations Research(411)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + "https://bit.ly/OPfriLink1MsTeams"
                         Stime = "11:00-11:50am"
                         tableValue = 1
                     } else if (hr == 11 && min == 50) {
@@ -919,7 +923,7 @@ bot.on('message', message => {
                     } else if (hr == 15 && min == 50) {
                         colour = '#0099ff';
                         slot = 7;
-                        periodName = "Operations Research(411)" + "\n" + "https://bit.ly/OPfriLink2MsTeams"
+                        periodName = "Operations Research(411)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + "https://bit.ly/OPfriLink2MsTeams"
                         Stime = "4:00-4:50pm"
                         tableValue = 1
                     }
@@ -944,10 +948,10 @@ bot.on('message', message => {
                         periodName = "TOE(242)/ Elective VI"
                         Stime = "8:50-9:40am"
                         tableValue = 1
-                    } else if (hr == 23 && min == 30) {
+                    } else if (hr == 16 && min == 29) {
                         colour = '#0099ff';
                         slot = 2;
-                        periodName = "TOE(242)/ IT Essentials(377)"
+                        periodName = "TOE(242)/ IT Essentials(377)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + "https://bit.ly/OPfriLink2MsTeams"
                         Stime = "9:50-10:40am"
                         tableValue = 1
                     } else if (hr == 22 && min == 40) {
@@ -1100,5 +1104,5 @@ bot.on('messageReactionRemove', async(reaction, user) => {
 
 
 
-
+bot.login(token);
 bot.login(process.env.TOKEN);
