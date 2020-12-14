@@ -924,7 +924,7 @@ bot.on('message', message => {
                         tableValue = 1
                     }
                     break;
-                case 1:
+                case 10:
                     if (hr == 23 && min == 5) {
                         colour = '#0099ff';
 
