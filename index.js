@@ -664,7 +664,7 @@ bot.on('message', message => {
                     } else if (hr == 10 && min == 50) {
                         colour = '#ff4646';
                         slot = 3;
-                        periodName = "Control Engineering(402)" + "\n" + ControlELink1st
+                        periodName = "Control Engineering(402)" + "\n" + "https://bit.ly/CEmonLink1MsTeams"
                         Stime = "11:00-11:50am"
                         tableValue = 1
                     } else if (hr == 11 && min == 50) {
@@ -682,13 +682,13 @@ bot.on('message', message => {
                     } else if (hr == 14 && min == 50) {
                         colour = '#ff4646';
                         slot = 6;
-                        periodName = "Control Engineering(402)" + "\n" + ControlELink2st
+                        periodName = "Control Engineering(402)" + "\n" + "https://bit.ly/CEmonLink2MsTeams"
                         Stime = "3:00-3:50pm"
                         tableValue = 1
                     } else if (hr == 15 && min == 50) {
                         colour = '#ff4646';
                         slot = 7;
-                        periodName = "Operations Research(411)"
+                        periodName = "Operations Research(411)" + "\n" + "https://bit.ly/OPmonLink1MsTeams"
                         Stime = "4:00-4:50pm"
                         tableValue = 1
                     }
@@ -728,13 +728,13 @@ bot.on('message', message => {
                     } else if (hr == 11 && min == 50) {
                         colour = '#61b15a';
                         slot = 4;
-                        periodName = "Operations Research(411)"
+                        periodName = "Operations Research(411)" + "\n" + "https://bit.ly/OPtueLink1MsTeams"
                         Stime = "12:00-12:50pm"
                         tableValue = 1
                     } else if (hr == 13 && min == 50) {
                         colour = '#61b15a';
                         slot = 5;
-                        periodName = "Control Engineering(402)" + "\n" + ControlELink2st
+                        periodName = "Control Engineering(402)"
                         Stime = "2:00-2:50pm"
                         tableValue = 1
                     } else if (hr == 14 && min == 50) {
@@ -746,7 +746,7 @@ bot.on('message', message => {
                     } else if (hr == 15 && min == 50) {
                         colour = '#61b15a';
                         slot = 7;
-                        periodName = "Operations Research(411)"
+                        periodName = "Operations Research(411)" + "\n" + "https://bit.ly/OPtueLink2MsTeams"
                         Stime = "4:00-4:50pm"
                         tableValue = 1
                     }
@@ -780,7 +780,7 @@ bot.on('message', message => {
                     } else if (hr == 10 && min == 50) {
                         colour = '#fc8621';
                         slot = 3;
-                        periodName = "Operations Research(411)"
+                        periodName = "Operations Research(411)" + "\n" + "https://bit.ly/OPwedLink1MsTeams"
                         Stime = "11:00-11:50am"
                         tableValue = 1
                     } else if (hr == 11 && min == 50) {
@@ -792,7 +792,7 @@ bot.on('message', message => {
                     } else if (hr == 13 && min == 50) {
                         colour = '#fc8621';
                         slot = 5;
-                        periodName = "Control Engineering(402)" + "\n" + ControlELink2st
+                        periodName = "Control Engineering(402)"
                         tableValue = 1
                     } else if (hr == 14 && min == 50) {
                         colour = '#fc8621';
@@ -837,13 +837,13 @@ bot.on('message', message => {
                     } else if (hr == 10 && min == 50) {
                         colour = '#9d0191';
                         slot = 3;
-                        periodName = "Control Engineering(402)" + "\n" + ControlELink1st
+                        periodName = "Control Engineering(402)"
                         Stime = "11:00-11:50am"
                         tableValue = 1
                     } else if (hr == 11 && min == 50) {
                         colour = '#9d0191';
                         slot = 4;
-                        periodName = "Operations Research(411)"
+                        periodName = "Operations Research(411)" + "\n" + "https://bit.ly/OPthursLink1MsTeams"
                         Stime = "12:00-12:50am"
                         tableValue = 1
                     } else if (hr == 13 && min == 50) {
@@ -861,7 +861,7 @@ bot.on('message', message => {
                     } else if (hr == 15 && min == 50) {
                         colour = '#9d0191';
                         slot = 7;
-                        periodName = "Control Engineering(402)" + "\n" + ControlELink2st
+                        periodName = "Control Engineering(402)"
                         Stime = "4:00-4:50pm"
                         tableValue = 1
                     }
@@ -895,13 +895,13 @@ bot.on('message', message => {
                     } else if (hr == 10 && min == 50) {
                         colour = '#0099ff';
                         slot = 3;
-                        periodName = "Operations Research(411)"
+                        periodName = "Operations Research(411)" + "\n" + "https://bit.ly/OPfriLink1MsTeams"
                         Stime = "11:00-11:50am"
                         tableValue = 1
                     } else if (hr == 11 && min == 50) {
                         colour = '#0099ff';
                         slot = 4;
-                        periodName = "Control Engineering(402)" + "\n" + ControlELink1st
+                        periodName = "Control Engineering(402)"
                         Stime = "12:00-12:50pm"
                         tableValue = 1
                     } else if (hr == 13 && min == 50) {
@@ -919,7 +919,7 @@ bot.on('message', message => {
                     } else if (hr == 15 && min == 50) {
                         colour = '#0099ff';
                         slot = 7;
-                        periodName = "Operations Research(411)"
+                        periodName = "Operations Research(411)" + "\n" + "https://bit.ly/OPfriLink2MsTeams"
                         Stime = "4:00-4:50pm"
                         tableValue = 1
                     }
@@ -956,19 +956,19 @@ bot.on('message', message => {
                         periodName = "Operations Research(411)"
                         Stime = "11:00-11:50am"
                         tableValue = 1
-                    } else if (hr == 11 && min == 55) {
+                    } else if (hr == 12 && min == 23) {
                         colour = '#0099ff';
                         slot = 4;
                         periodName = "Control Engineering(402)" + "\n" + ControlELink1st
                         Stime = "12:00-12:50am"
                         tableValue = 1
-                    } else if (hr == 22 && min == 50) {
+                    } else if (hr == 12 && min == 24) {
                         colour = '#0099ff';
                         slot = 5;
                         periodName = "Elective VI"
                         Stime = "2:00-2:50pm"
                         tableValue = 1
-                    } else if (hr == 11 && min == 59) {
+                    } else if (hr == 12 && min == 26) {
                         colour = '#0099ff';
                         slot = 6;
                         periodName = "Control Engineering(402)" + "\n" + ControlELink2st
