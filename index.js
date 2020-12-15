@@ -1,5 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
+const token = 'NzgxMDE3NDc3ODE1NTk5MTA1.X73hNQ.KE8HUMMFRgH48koFxIxP_oKAsxI';
+
 
 const PREFIX = '?';
 const Prefix = "!";
@@ -613,9 +615,9 @@ bot.on('message', message => {
             const lectureVideos = new Discord.MessageEmbed()
                 .setColor('#3282b8')
                 .setTitle('Lecture Videos✌!!')
-                .setDescription("_" + "\n"+"[Control Engineering](https://bit.ly/ceLectureVideos)" + "\n" + "\n" +
+                .setDescription("\n" + "[Control Engineering](https://bit.ly/ceLectureVideos)" + "\n" + "\n" +
                     "[Operations Research](https://bit.ly/oprLectureVideos)" + "\n" + "\n" +
-                    "[Lean Manufacturing](https://bit.ly/leLectureVideos)" + "\n" +"." )
+                    "[Lean Manufacturing](https://bit.ly/leLectureVideos)" + "\n" + ".")
                 .setFooter("🕉 Namah Shivaya")
             message.channel.send(lectureVideos)
             break;
@@ -1113,7 +1115,6 @@ bot.on('messageReactionRemove', async(reaction, user) => {
 
 
 })
-
 
 
 bot.login(process.env.TOKEN);
