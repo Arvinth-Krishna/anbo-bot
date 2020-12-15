@@ -606,6 +606,19 @@ bot.on('message', message => {
                 msg.delete({ timeout: 20000 })
             });
             break;
+        case "lecture":
+        case "lv":
+        case "class":
+            message.delete();
+            const lectureVideos = new Discord.MessageEmbed()
+                .setColor('#3282b8')
+                .setTitle('Lecture Videos✌!!')
+                .setDescription("[Control Engineering](https://bit.ly/ceLectureVideos)" + "\n" + "\n" +
+                    "[Operations Research](https://bit.ly/oprLectureVideos)" + "\n" + "\n" +
+                    "[Lean Manufacturing](https://bit.ly/leLectureVideos)" + "\n" + "_" + "\n")
+                .setFooter("Amrita Links-GAK")
+            message.channel.send(lectureVideos)
+            break;
 
 
 
@@ -627,7 +640,7 @@ bot.on('message', message => {
         ControlELink1st = " "
         ControlELink2st = " "
     }
-    if (message.content === "timeloop") {
+    if (message.content === "timeloop" && message.channel.id == '787705631632523285') {
         var interval = setInterval(() => {
             d = new Date();
             hr = d.getHours();
@@ -997,7 +1010,7 @@ bot.on('message', message => {
                         "**" + periodName + "**" + "\n")
 
                 message.channel.send(Period).then(msg => {
-                    msg.delete({ timeout: 3000000 })
+                    msg.delete({ timeout: 3560000 })
                 });
 
             }
@@ -1014,7 +1027,7 @@ bot.on('message', message => {
 
             }
 
-            if (hr == 24 && min == 0) {
+            if (hr == 0 && min == 0) {
                 console.log("im inside autodelete")
                 message.channel.messages.fetch({ limit: 100 })
                     .then(fetched => {
@@ -1100,6 +1113,7 @@ bot.on('messageReactionRemove', async(reaction, user) => {
 
 
 })
+
 
 
 bot.login(process.env.TOKEN);
