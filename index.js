@@ -613,7 +613,7 @@ bot.on('message', message => {
             const lectureVideos = new Discord.MessageEmbed()
                 .setColor('#3282b8')
                 .setTitle('Lecture Videos✌!!')
-                .setDescription("_" + "\n"+[Control Engineering](https://bit.ly/ceLectureVideos)" + "\n" + "\n" +
+                .setDescription("_" + "\n"+"[Control Engineering](https://bit.ly/ceLectureVideos)" + "\n" + "\n" +
                     "[Operations Research](https://bit.ly/oprLectureVideos)" + "\n" + "\n" +
                     "[Lean Manufacturing](https://bit.ly/leLectureVideos)" + "\n" +"." )
                 .setFooter("🕉 Namah Shivaya")
