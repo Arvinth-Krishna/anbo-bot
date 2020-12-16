@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 const bot = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 
 
-
 const PREFIX = '?';
 const Prefix = "!";
 
@@ -11,6 +10,7 @@ anboAnsMsgIDlist = [];
 imageSresultAnswer = [];
 anboPinValue = 0;
 anboImageAnsfound = false;
+thisSaturday = "none"
 imagematchfound = false;
 ControlELink1st = "https://bit.ly/ControlEngineeringTeamsLink1"
 ControlELink2st = "https://bit.ly/ControlEngineeringTeamsLink2"
@@ -634,8 +634,28 @@ bot.on('message', message => {
 bot.on('message', message => {
     words = message.content.split(" ");
 
-    if ("#cel1" == words[0]) {
-        ControlELink1st = words[1];
+
+
+    if ("sat=" == words[0].toLowerCase() && message.channel.id == '787705631632523285') {
+        thisSaturday = words[1].toLowerCase();
+        switch (thisSaturday) {
+            case 'mon':
+                dayText = "Monday";
+                break;
+            case "tue":
+                dayText = "Tuesday";
+                break;
+            case "wed":
+                dayText = "Wednesday"
+                break;
+            case 'thur':
+                dayText = "Thursday";
+                break;
+            case "fri":
+                dayText = "Friday";
+                break;
+        }
+        message.channel.send("(noted)😉👍" + "\n" + "This SATURDAY is our New " + dayText)
     } else if ("#cel2" == words[0]) {
         ControlELink2st = words[1]
     } else if ("#celReset" == words[0]) {
@@ -651,356 +671,378 @@ bot.on('message', message => {
             day = d.getDay();
             tableValue = 0;
             tableTodaySValue = 0;
+
             console.log(hr + " " + min + " " + sec + " " + day);
             switch (day) {
+                case 7:
+                    if (hr == 1 && min == 0) {
+                        thisSaturday = "none";
+                    }
+                    break;
+                case 6:
+
                 case 1:
+                    if (day == "1" || thisSaturday == "mon") {
 
-                    if (hr == 7 && min == 30) {
-                        colour = '#ff4646';
-                        today = "Monday's TimeTable"
-                        tableHeader = "**Monday's TimeTable**" +
-                            "\n" + "\n" + "1) **8:50-9:40am** -- TOE(242) / Elective VI" +
-                            "\n" + "\n" + "2) **9:50-10:40am** -- TOE(242) / IT Essentials(377)" +
-                            "\n" + "\n" + "3) **11:00-11:50am** -- Control Engineering(402)" +
-                            "\n" + "\n" + "4) **12:00-12:50pm** -- IT Essentials(377)" +
-                            "\n" + "\n" + "5) **2:00-2:50pm** -- Elective VI" +
-                            "\n" + "\n" + "6) **3:00-3:50pm** -- Control Engineering(402)" +
-                            "\n" + "\n" + "7) **4:00-4:50pm** -- Operations Research(411)" + "\n" + "."
+                        if (hr == 7 && min == 30) {
+                            colour = '#ff4646';
+                            today = "Monday's TimeTable"
+                            tableHeader = "**Monday's TimeTable**" +
+                                "\n" + "\n" + "1) **8:50-9:40am** -- TOE(242) / Elective VI" +
+                                "\n" + "\n" + "2) **9:50-10:40am** -- TOE(242) / IT Essentials(377)" +
+                                "\n" + "\n" + "3) **11:00-11:50am** -- Control Engineering(402)" +
+                                "\n" + "\n" + "4) **12:00-12:50pm** -- IT Essentials(377)" +
+                                "\n" + "\n" + "5) **2:00-2:50pm** -- Elective VI" +
+                                "\n" + "\n" + "6) **3:00-3:50pm** -- Control Engineering(402)" +
+                                "\n" + "\n" + "7) **4:00-4:50pm** -- Operations Research(411)" + "\n" + "."
 
-                        tableTodaySValue = 1
-                    } else if (hr == 8 && min == 40) {
-                        colour = '#ff4646';
-                        slot = 1;
-                        periodName = "TOE(242) / Elective VI"
-                        Stime = "8:50-9:40am"
-                        tableValue = 1
-                    } else if (hr == 9 && min == 40) {
-                        colour = '#ff4646';
-                        slot = 2;
-                        periodName = "TOE(242) / IT Essentials(377)"
-                        Stime = "9:50-10:40am"
-                        tableValue = 1
-                    } else if (hr == 10 && min == 50) {
-                        colour = '#ff4646';
-                        slot = 3;
-                        periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + "https://bit.ly/CEmonLink1MsTeams"
-                        Stime = "11:00-11:50am"
-                        tableValue = 1
-                    } else if (hr == 11 && min == 50) {
-                        colour = '#ff4646';
-                        slot = 4;
-                        periodName = "IT Essentials(377)"
-                        Stime = "12:00-12:50pm"
-                        tableValue = 1
-                    } else if (hr == 13 && min == 50) {
-                        colour = '#ff4646';
-                        slot = 5;
-                        periodName = "Elective VI"
-                        Stime = "2:00-2:50pm"
-                        tableValue = 1
-                    } else if (hr == 14 && min == 50) {
-                        colour = '#ff4646';
-                        slot = 6;
-                        periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + "https://bit.ly/CEmonLink2MsTeams"
-                        Stime = "3:00-3:50pm"
-                        tableValue = 1
-                    } else if (hr == 15 && min == 50) {
-                        colour = '#ff4646';
-                        slot = 7;
-                        periodName = "Operations Research(411)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + "https://bit.ly/OPmonLink1MsTeams"
-                        Stime = "4:00-4:50pm"
-                        tableValue = 1
+                            tableTodaySValue = 1
+                        } else if (hr == 8 && min == 40) {
+                            colour = '#ff4646';
+                            slot = 1;
+                            periodName = "TOE(242) / Elective VI"
+                            Stime = "8:50-9:40am"
+                            tableValue = 1
+                        } else if (hr == 9 && min == 40) {
+                            colour = '#ff4646';
+                            slot = 2;
+                            periodName = "TOE(242) / IT Essentials(377)"
+                            Stime = "9:50-10:40am"
+                            tableValue = 1
+                        } else if (hr == 10 && min == 50) {
+                            colour = '#ff4646';
+                            slot = 3;
+                            periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + "https://bit.ly/CEmonLink1MsTeams"
+                            Stime = "11:00-11:50am"
+                            tableValue = 1
+                        } else if (hr == 11 && min == 50) {
+                            colour = '#ff4646';
+                            slot = 4;
+                            periodName = "IT Essentials(377)"
+                            Stime = "12:00-12:50pm"
+                            tableValue = 1
+                        } else if (hr == 13 && min == 50) {
+                            colour = '#ff4646';
+                            slot = 5;
+                            periodName = "Elective VI"
+                            Stime = "2:00-2:50pm"
+                            tableValue = 1
+                        } else if (hr == 14 && min == 50) {
+                            colour = '#ff4646';
+                            slot = 6;
+                            periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + "https://bit.ly/CEmonLink2MsTeams"
+                            Stime = "3:00-3:50pm"
+                            tableValue = 1
+                        } else if (hr == 15 && min == 50) {
+                            colour = '#ff4646';
+                            slot = 7;
+                            periodName = "Operations Research(411)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + "https://bit.ly/OPmonLink1MsTeams"
+                            Stime = "4:00-4:50pm"
+                            tableValue = 1
+                        }
+                        break;
                     }
-                    break;
                 case 2:
-                    if (hr == 7 && min == 30) {
-                        colour = '#61b15a';
+                    if (day == "2" || thisSaturday == "tue") {
+                        if (hr == 7 && min == 30) {
+                            colour = '#61b15a';
 
-                        tableHeader = "**Tuesday's TimeTable**" +
-                            "\n" + "\n" + "1) **8:50-9:40am** -- TOE(242)/ IT Essentials(377)/ Elective VI" +
-                            "\n" + "\n" + "2) **9:50-10:40am** -- TOE(242)" +
-                            "\n" + "\n" + "3) **11:00-11:50am** -- IT Essentials(377)/ Elective VI" +
-                            "\n" + "\n" + "4) **12:00-12:50pm** -- Operations Research(411)" +
-                            "\n" + "\n" + "5) **2:00-2:50pm** -- Control Engineering(402)" +
-                            "\n" + "\n" + "6) **3:00-3:50pm** -- Free🥳" +
-                            "\n" + "\n" + "7) **4:00-4:50pm** -- Operations Research(411)" + "\n" + "."
+                            tableHeader = "**Tuesday's TimeTable**" +
+                                "\n" + "\n" + "1) **8:50-9:40am** -- TOE(242)/ IT Essentials(377)/ Elective VI" +
+                                "\n" + "\n" + "2) **9:50-10:40am** -- TOE(242)" +
+                                "\n" + "\n" + "3) **11:00-11:50am** -- IT Essentials(377)/ Elective VI" +
+                                "\n" + "\n" + "4) **12:00-12:50pm** -- Operations Research(411)" +
+                                "\n" + "\n" + "5) **2:00-2:50pm** -- Control Engineering(402)" +
+                                "\n" + "\n" + "6) **3:00-3:50pm** -- Free🥳" +
+                                "\n" + "\n" + "7) **4:00-4:50pm** -- Operations Research(411)" + "\n" + "."
 
-                        tableTodaySValue = 1
-                    } else if (hr == 8 && min == 40) {
-                        colour = '#61b15a';
-                        slot = 1;
-                        periodName = "TOE(242)/ IT Essentials(377)/ Elective VI"
-                        Stime = "8:50-9:40am"
-                        tableValue = 1
-                    } else if (hr == 9 && min == 40) {
-                        colour = '#61b15a';
-                        slot = 2;
-                        periodName = "TOE(242)"
-                        Stime = "9:50-10:40am"
-                        tableValue = 1
-                    } else if (hr == 10 && min == 50) {
-                        colour = '#61b15a';
-                        slot = 3;
-                        periodName = "IT Essentials(377)/ Elective VI"
-                        Stime = "11:00-11:50am"
-                        tableValue = 1
-                    } else if (hr == 11 && min == 50) {
-                        colour = '#61b15a';
-                        slot = 4;
-                        periodName = "Operations Research(411)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + "https://bit.ly/OPtueLink1MsTeams"
-                        Stime = "12:00-12:50pm"
-                        tableValue = 1
-                    } else if (hr == 13 && min == 50) {
-                        colour = '#61b15a';
-                        slot = 5;
-                        periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + "https://bit.ly/CEtueLink1MsTeams"
-                        Stime = "2:00-2:50pm"
-                        tableValue = 1
-                    } else if (hr == 14 && min == 50) {
-                        colour = '#61b15a';
-                        slot = 6;
-                        periodName = "Free🥳"
-                        Stime = "3:00-3:50pm"
-                        tableValue = 1
-                    } else if (hr == 15 && min == 50) {
-                        colour = '#61b15a';
-                        slot = 7;
-                        periodName = "Operations Research(411)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + "https://bit.ly/OPtueLink2MsTeams"
-                        Stime = "4:00-4:50pm"
-                        tableValue = 1
+                            tableTodaySValue = 1
+                        } else if (hr == 8 && min == 40) {
+                            colour = '#61b15a';
+                            slot = 1;
+                            periodName = "TOE(242)/ IT Essentials(377)/ Elective VI"
+                            Stime = "8:50-9:40am"
+                            tableValue = 1
+                        } else if (hr == 9 && min == 40) {
+                            colour = '#61b15a';
+                            slot = 2;
+                            periodName = "TOE(242)"
+                            Stime = "9:50-10:40am"
+                            tableValue = 1
+                        } else if (hr == 10 && min == 50) {
+                            colour = '#61b15a';
+                            slot = 3;
+                            periodName = "IT Essentials(377)/ Elective VI"
+                            Stime = "11:00-11:50am"
+                            tableValue = 1
+                        } else if (hr == 11 && min == 50) {
+                            colour = '#61b15a';
+                            slot = 4;
+                            periodName = "Operations Research(411)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + "https://bit.ly/OPtueLink1MsTeams"
+                            Stime = "12:00-12:50pm"
+                            tableValue = 1
+                        } else if (hr == 13 && min == 50) {
+                            colour = '#61b15a';
+                            slot = 5;
+                            periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + "https://bit.ly/CEtueLink1MsTeams"
+                            Stime = "2:00-2:50pm"
+                            tableValue = 1
+                        } else if (hr == 14 && min == 50) {
+                            colour = '#61b15a';
+                            slot = 6;
+                            periodName = "Free🥳"
+                            Stime = "3:00-3:50pm"
+                            tableValue = 1
+                        } else if (hr == 15 && min == 50) {
+                            colour = '#61b15a';
+                            slot = 7;
+                            periodName = "Operations Research(411)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + "https://bit.ly/OPtueLink2MsTeams"
+                            Stime = "4:00-4:50pm"
+                            tableValue = 1
+                        }
+                        break;
                     }
-                    break;
                 case 3:
-                    if (hr == 7 && min == 30) {
-                        colour = '#fc8621';
+                    if (day == "3" || thisSaturday == "wed") {
+                        if (hr == 7 && min == 30) {
+                            colour = '#fc8621';
 
-                        tableHeader = "**Wednesday's TimeTable**" +
-                            "\n" + "\n" + "1) **8:50-9:40am** -- TOE(242)/ Elective VI" +
-                            "\n" + "\n" + "2) **9:50-10:40am** -- TOE(242)/ IT Essentials(377)" +
-                            "\n" + "\n" + "3) **11:00-11:50am** -- Operations Research(411)" +
-                            "\n" + "\n" + "4) **12:00-12:50pm** -- IT Essentials(377)" +
-                            "\n" + "\n" + "5) **2:00-2:50pm** -- Control Engineering(402)" +
-                            "\n" + "\n" + "6) **3:00-3:50pm** -- Free🥳" +
-                            "\n" + "\n" + "7) **4:00-4:50pm** -- Elective VI" + "\n" + "."
+                            tableHeader = "**Wednesday's TimeTable**" +
+                                "\n" + "\n" + "1) **8:50-9:40am** -- TOE(242)/ Elective VI" +
+                                "\n" + "\n" + "2) **9:50-10:40am** -- TOE(242)/ IT Essentials(377)" +
+                                "\n" + "\n" + "3) **11:00-11:50am** -- Operations Research(411)" +
+                                "\n" + "\n" + "4) **12:00-12:50pm** -- IT Essentials(377)" +
+                                "\n" + "\n" + "5) **2:00-2:50pm** -- Control Engineering(402)" +
+                                "\n" + "\n" + "6) **3:00-3:50pm** -- Free🥳" +
+                                "\n" + "\n" + "7) **4:00-4:50pm** -- Elective VI" + "\n" + "."
 
-                        tableTodaySValue = 1
-                    } else if (hr == 8 && min == 40) {
-                        colour = '#fc8621';
-                        slot = 1;
-                        periodName = "TOE(242)/ Elective VI"
-                        Stime = "8:50-9:40am"
-                        tableValue = 1
-                    } else if (hr == 9 && min == 40) {
-                        colour = '#fc8621';
-                        slot = 2;
-                        periodName = "TOE(242)/ IT Essentials(377)"
-                        Stime = "9:50-10:40am"
-                        tableValue = 1
-                    } else if (hr == 10 && min == 50) {
-                        colour = '#fc8621';
-                        slot = 3;
-                        periodName = "Operations Research(411)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + "https://bit.ly/OPwedLink1MsTeams"
-                        Stime = "11:00-11:50am"
-                        tableValue = 1
-                    } else if (hr == 11 && min == 50) {
-                        colour = '#fc8621';
-                        slot = 4;
-                        periodName = "IT Essentials(377)"
-                        Stime = "12:00-12:50pm"
-                        tableValue = 1
-                    } else if (hr == 13 && min == 50) {
-                        colour = '#fc8621';
-                        slot = 5;
-                        periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + "https://bit.ly/CEwedLink1Msteams"
-                        tableValue = 1
-                    } else if (hr == 14 && min == 50) {
-                        colour = '#fc8621';
-                        slot = 6;
-                        periodName = "Free🥳"
-                        Stime = "3:00-3:50pm"
-                        tableValue = 1
-                    } else if (hr == 15 && min == 50) {
-                        colour = '#fc8621';
-                        slot = 7;
-                        periodName = "Elective VI"
-                        Stime = "4:00-4:50pm"
-                        tableValue = 1
+                            tableTodaySValue = 1
+                        } else if (hr == 8 && min == 40) {
+                            colour = '#fc8621';
+                            slot = 1;
+                            periodName = "TOE(242)/ Elective VI"
+                            Stime = "8:50-9:40am"
+                            tableValue = 1
+                        } else if (hr == 9 && min == 40) {
+                            colour = '#fc8621';
+                            slot = 2;
+                            periodName = "TOE(242)/ IT Essentials(377)"
+                            Stime = "9:50-10:40am"
+                            tableValue = 1
+                        } else if (hr == 10 && min == 50) {
+                            colour = '#fc8621';
+                            slot = 3;
+                            periodName = "Operations Research(411)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + "https://bit.ly/OPwedLink1MsTeams"
+                            Stime = "11:00-11:50am"
+                            tableValue = 1
+                        } else if (hr == 11 && min == 50) {
+                            colour = '#fc8621';
+                            slot = 4;
+                            periodName = "IT Essentials(377)"
+                            Stime = "12:00-12:50pm"
+                            tableValue = 1
+                        } else if (hr == 13 && min == 50) {
+                            colour = '#fc8621';
+                            slot = 5;
+                            periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + "https://bit.ly/CEwedLink1Msteams"
+                            tableValue = 1
+                        } else if (hr == 14 && min == 50) {
+                            colour = '#fc8621';
+                            slot = 6;
+                            periodName = "Free🥳"
+                            Stime = "3:00-3:50pm"
+                            tableValue = 1
+                        } else if (hr == 15 && min == 50) {
+                            colour = '#fc8621';
+                            slot = 7;
+                            periodName = "Elective VI"
+                            Stime = "4:00-4:50pm"
+                            tableValue = 1
+                        }
+                        break;
                     }
-                    break;
                 case 4:
-                    if (hr == 7 && min == 30) {
-                        colour = '#9d0191';
+                    if (day == "4" || thisSaturday == "thur") {
+                        if (hr == 7 && min == 30) {
+                            colour = '#9d0191';
 
-                        tableHeader = "**Thursday's TimeTable**" +
-                            "\n" + "\n" + "1) **8:50-9:40am** -- TOE(242)/ IT Essentials(377)/ Elective VI" +
-                            "\n" + "\n" + "2) **9:50-10:40am** -- TOE(242)" +
-                            "\n" + "\n" + "3) **11:00-11:50am** -- Control Engineering(402)" +
-                            "\n" + "\n" + "4) **12:00-12:50pm** -- Operations Research(411)" +
-                            "\n" + "\n" + "5) **2:00-2:50pm** -- IT Essentials(377)/ Elective VI" +
-                            "\n" + "\n" + "6) **3:00-3:50pm** -- IT Essentials(377)" +
-                            "\n" + "\n" + "7) **4:00-4:50pm** -- Control Engineering(402)" + "\n" + "."
+                            tableHeader = "**Thursday's TimeTable**" +
+                                "\n" + "\n" + "1) **8:50-9:40am** -- TOE(242)/ IT Essentials(377)/ Elective VI" +
+                                "\n" + "\n" + "2) **9:50-10:40am** -- TOE(242)" +
+                                "\n" + "\n" + "3) **11:00-11:50am** -- Control Engineering(402)" +
+                                "\n" + "\n" + "4) **12:00-12:50pm** -- Operations Research(411)" +
+                                "\n" + "\n" + "5) **2:00-2:50pm** -- IT Essentials(377)/ Elective VI" +
+                                "\n" + "\n" + "6) **3:00-3:50pm** -- IT Essentials(377)" +
+                                "\n" + "\n" + "7) **4:00-4:50pm** -- Control Engineering(402)" + "\n" + "."
 
-                        tableTodaySValue = 1
-                    } else if (hr == 8 && min == 40) {
-                        colour = '#9d0191';
-                        slot = 1;
-                        periodName = "TOE(242)/ IT Essentials(377)/ Elective VI"
-                        Stime = "8:50-9:40am"
-                        tableValue = 1
-                    } else if (hr == 9 && min == 40) {
-                        colour = '#9d0191';
-                        slot = 2;
-                        periodName = "TOE(242)"
-                        Stime = "9:50-10:40am"
-                        tableValue = 1
-                    } else if (hr == 10 && min == 50) {
-                        colour = '#9d0191';
-                        slot = 3;
-                        periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + "https://bit.ly/CEthursLink1MsTeams"
-                        Stime = "11:00-11:50am"
-                        tableValue = 1
-                    } else if (hr == 11 && min == 50) {
-                        colour = '#9d0191';
-                        slot = 4;
-                        periodName = "Operations Research(411)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + "https://bit.ly/OPthursLink1MsTeams"
-                        Stime = "12:00-12:50am"
-                        tableValue = 1
-                    } else if (hr == 13 && min == 50) {
-                        colour = '#9d0191';
-                        slot = 5;
-                        periodName = "IT Essentials(377)/ Elective VI"
-                        Stime = "2:00-2:50pm"
-                        tableValue = 1
-                    } else if (hr == 14 && min == 50) {
-                        colour = '#9d0191';
-                        slot = 6;
-                        periodName = "IT Essentials(377)"
-                        Stime = "3:00-3:50pm"
-                        tableValue = 1
-                    } else if (hr == 15 && min == 50) {
-                        colour = '#9d0191';
-                        slot = 7;
-                        periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + "https://bit.ly/CEthursLink2MsTeams"
-                        Stime = "4:00-4:50pm"
-                        tableValue = 1
+                            tableTodaySValue = 1
+                        } else if (hr == 8 && min == 40) {
+                            colour = '#9d0191';
+                            slot = 1;
+                            periodName = "TOE(242)/ IT Essentials(377)/ Elective VI"
+                            Stime = "8:50-9:40am"
+                            tableValue = 1
+                        } else if (hr == 9 && min == 40) {
+                            colour = '#9d0191';
+                            slot = 2;
+                            periodName = "TOE(242)"
+                            Stime = "9:50-10:40am"
+                            tableValue = 1
+                        } else if (hr == 10 && min == 50) {
+                            colour = '#9d0191';
+                            slot = 3;
+                            periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + "https://bit.ly/CEthursLink1MsTeams"
+                            Stime = "11:00-11:50am"
+                            tableValue = 1
+                        } else if (hr == 11 && min == 50) {
+                            colour = '#9d0191';
+                            slot = 4;
+                            periodName = "Operations Research(411)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + "https://bit.ly/OPthursLink1MsTeams"
+                            Stime = "12:00-12:50am"
+                            tableValue = 1
+                        } else if (hr == 13 && min == 50) {
+                            colour = '#9d0191';
+                            slot = 5;
+                            periodName = "IT Essentials(377)/ Elective VI"
+                            Stime = "2:00-2:50pm"
+                            tableValue = 1
+                        } else if (hr == 14 && min == 50) {
+                            colour = '#9d0191';
+                            slot = 6;
+                            periodName = "IT Essentials(377)"
+                            Stime = "3:00-3:50pm"
+                            tableValue = 1
+                        } else if (hr == 15 && min == 50) {
+                            colour = '#9d0191';
+                            slot = 7;
+                            periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + "https://bit.ly/CEthursLink2MsTeams"
+                            Stime = "4:00-4:50pm"
+                            tableValue = 1
+                        }
+                        break;
                     }
-                    break;
                 case 5:
-                    if (hr == 7 && min == 30) {
-                        colour = '#0099ff';
+                    if (day == "5" || thisSaturday == "fri") {
+                        if (hr == 7 && min == 30) {
+                            colour = '#0099ff';
 
-                        tableHeader = "**Friday's TimeTable**" +
-                            "\n" + "\n" + "1) **8:50-9:40am** -- TOE(242)/ Elective VI" +
-                            "\n" + "\n" + "2) **9:50-10:40am** -- TOE(242)/ IT Essentials(377)" +
-                            "\n" + "\n" + "3) **11:00-11:50am** -- Operations Research(411)" +
-                            "\n" + "\n" + "4) **12:00-12:50pm** -- Control Engineering(402)" +
-                            "\n" + "\n" + "5) **2:00-2:50pm** -- Elective VI" +
-                            "\n" + "\n" + "6) **3:00-3:50pm** -- Free🥳" +
-                            "\n" + "\n" + "7) **4:00-4:50pm** -- Operations Research(411)" + "\n" + "."
+                            tableHeader = "**Friday's TimeTable**" +
+                                "\n" + "\n" + "1) **8:50-9:40am** -- TOE(242)/ Elective VI" +
+                                "\n" + "\n" + "2) **9:50-10:40am** -- TOE(242)/ IT Essentials(377)" +
+                                "\n" + "\n" + "3) **11:00-11:50am** -- Operations Research(411)" +
+                                "\n" + "\n" + "4) **12:00-12:50pm** -- Control Engineering(402)" +
+                                "\n" + "\n" + "5) **2:00-2:50pm** -- Elective VI" +
+                                "\n" + "\n" + "6) **3:00-3:50pm** -- Free🥳" +
+                                "\n" + "\n" + "7) **4:00-4:50pm** -- Operations Research(411)" + "\n" + "."
 
-                        tableTodaySValue = 1
-                    } else if (hr == 8 && min == 40) {
-                        colour = '#0099ff';
-                        slot = 1;
-                        periodName = "TOE(242)/ Elective VI"
-                        Stime = "8:50-9:40am"
-                        tableValue = 1
-                    } else if (hr == 9 && min == 40) {
-                        colour = '#0099ff';
-                        slot = 2;
-                        periodName = "TOE(242)/ IT Essentials(377)"
-                        Stime = "9:50-10:40am"
-                        tableValue = 1
-                    } else if (hr == 10 && min == 50) {
-                        colour = '#0099ff';
-                        slot = 3;
-                        periodName = "Operations Research(411)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + "https://bit.ly/OPfriLink1MsTeams"
-                        Stime = "11:00-11:50am"
-                        tableValue = 1
-                    } else if (hr == 11 && min == 50) {
-                        colour = '#0099ff';
-                        slot = 4;
-                        periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + "https://bit.ly/CEfriLink1MsTeams"
-                        Stime = "12:00-12:50pm"
-                        tableValue = 1
-                    } else if (hr == 13 && min == 50) {
-                        colour = '#0099ff';
-                        slot = 5;
-                        periodName = "Elective VI"
-                        Stime = "2:00-2:50pm"
-                        tableValue = 1
-                    } else if (hr == 14 && min == 50) {
-                        colour = '#0099ff';
-                        slot = 6;
-                        periodName = "Free🥳"
-                        Stime = "3:00-3:50pm"
-                        tableValue = 1
-                    } else if (hr == 15 && min == 50) {
-                        colour = '#0099ff';
-                        slot = 7;
-                        periodName = "Operations Research(411)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + "https://bit.ly/OPfriLink2MsTeams"
-                        Stime = "4:00-4:50pm"
-                        tableValue = 1
+                            tableTodaySValue = 1
+                        } else if (hr == 8 && min == 40) {
+                            colour = '#0099ff';
+                            slot = 1;
+                            periodName = "TOE(242)/ Elective VI"
+                            Stime = "8:50-9:40am"
+                            tableValue = 1
+                        } else if (hr == 9 && min == 40) {
+                            colour = '#0099ff';
+                            slot = 2;
+                            periodName = "TOE(242)/ IT Essentials(377)"
+                            Stime = "9:50-10:40am"
+                            tableValue = 1
+                        } else if (hr == 10 && min == 50) {
+                            colour = '#0099ff';
+                            slot = 3;
+                            periodName = "Operations Research(411)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + "https://bit.ly/OPfriLink1MsTeams"
+                            Stime = "11:00-11:50am"
+                            tableValue = 1
+                        } else if (hr == 11 && min == 50) {
+                            colour = '#0099ff';
+                            slot = 4;
+                            periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + "https://bit.ly/CEfriLink1MsTeams"
+                            Stime = "12:00-12:50pm"
+                            tableValue = 1
+                        } else if (hr == 13 && min == 50) {
+                            colour = '#0099ff';
+                            slot = 5;
+                            periodName = "Elective VI"
+                            Stime = "2:00-2:50pm"
+                            tableValue = 1
+                        } else if (hr == 14 && min == 50) {
+                            colour = '#0099ff';
+                            slot = 6;
+                            periodName = "Free🥳"
+                            Stime = "3:00-3:50pm"
+                            tableValue = 1
+                        } else if (hr == 15 && min == 50) {
+                            colour = '#0099ff';
+                            slot = 7;
+                            periodName = "Operations Research(411)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + "https://bit.ly/OPfriLink2MsTeams"
+                            Stime = "4:00-4:50pm"
+                            tableValue = 1
+                        }
+                        break;
                     }
-                    break;
                 case 10:
-                    if (hr == 23 && min == 5) {
-                        colour = '#0099ff';
+                    if (day == "10" || thisSaturday == "test") {
+                        if (hr == 17 && min == 55) {
+                            colour = '#0099ff';
 
-                        tableHeader = "**Friday's TimeTable**" +
-                            "\n" + "\n" + "1) **8:50-9:40am** -- TOE(242)/ Elective VI" +
-                            "\n" + "\n" + "2) **9:50-10:40am** -- TOE(242)/ IT Essentials(377)" +
-                            "\n" + "\n" + "3) **11:00-11:50am** -- Operations Research(411)" +
-                            "\n" + "\n" + "4) **12:00-12:50pm** -- Control Engineering(402)" +
-                            "\n" + "\n" + "5) **2:00-2:50pm** -- Elective VI" +
-                            "\n" + "\n" + "6) **3:00-3:50pm** -- Free🥳" +
-                            "\n" + "\n" + "7) **4:00-4:50pm** -- Operations Research(411)" + "\n" + "."
+                            tableHeader = "**Friday's TimeTable**" +
+                                "\n" + "\n" + "1) **8:50-9:40am** -- TOE(242)/ Elective VI" +
+                                "\n" + "\n" + "2) **9:50-10:40am** -- TOE(242)/ IT Essentials(377)" +
+                                "\n" + "\n" + "3) **11:00-11:50am** -- Operations Research(411)" +
+                                "\n" + "\n" + "4) **12:00-12:50pm** -- Control Engineering(402)" +
+                                "\n" + "\n" + "5) **2:00-2:50pm** -- Elective VI" +
+                                "\n" + "\n" + "6) **3:00-3:50pm** -- Free🥳" +
+                                "\n" + "\n" + "7) **4:00-4:50pm** -- Operations Research(411)" + "\n" + "."
 
-                        tableTodaySValue = 1
-                    } else if (hr == 23 && min == 10) {
-                        colour = '#0099ff';
-                        slot = 1;
-                        periodName = "TOE(242)/ Elective VI"
-                        Stime = "8:50-9:40am"
-                        tableValue = 1
-                    } else if (hr == 16 && min == 29) {
-                        colour = '#0099ff';
-                        slot = 2;
-                        periodName = "TOE(242)/ IT Essentials(377)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + "https://bit.ly/OPfriLink2MsTeams"
-                        Stime = "9:50-10:40am"
-                        tableValue = 1
-                    } else if (hr == 22 && min == 40) {
-                        colour = '#0099ff';
-                        slot = 3;
-                        periodName = "Operations Research(411)"
-                        Stime = "11:00-11:50am"
-                        tableValue = 1
-                    } else if (hr == 12 && min == 23) {
-                        colour = '#0099ff';
-                        slot = 4;
-                        periodName = "Control Engineering(402)" + "\n" + ControlELink1st
-                        Stime = "12:00-12:50am"
-                        tableValue = 1
-                    } else if (hr == 12 && min == 24) {
-                        colour = '#0099ff';
-                        slot = 5;
-                        periodName = "Elective VI"
-                        Stime = "2:00-2:50pm"
-                        tableValue = 1
-                    } else if (hr == 12 && min == 26) {
-                        colour = '#0099ff';
-                        slot = 6;
-                        periodName = "Control Engineering(402)" + "\n" + ControlELink2st
-                        Stime = "3:00-3:50pm"
-                        tableValue = 1
-                    } else if (hr == 22 && min == 59) {
-                        colour = '#0099ff';
+                            tableTodaySValue = 1
+                        } else if (hr == 17 && min == 57) {
+                            colour = '#0099ff';
+                            slot = 1;
+                            periodName = "TOE(242)/ Elective VI"
+                            Stime = "8:50-9:40am"
+                            tableValue = 1
+                        } else if (hr == 17 && min == 59) {
+                            colour = '#0099ff';
+                            slot = 2;
+                            periodName = "TOE(242)/ IT Essentials(377)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + "https://bit.ly/OPfriLink2MsTeams"
+                            Stime = "9:50-10:40am"
+                            tableValue = 1
+                        } else if (hr == 22 && min == 40) {
+                            colour = '#0099ff';
+                            slot = 3;
+                            periodName = "Operations Research(411)"
+                            Stime = "11:00-11:50am"
+                            tableValue = 1
+                        } else if (hr == 12 && min == 23) {
+                            colour = '#0099ff';
+                            slot = 4;
+                            periodName = "Control Engineering(402)" + "\n" + ControlELink1st
+                            Stime = "12:00-12:50am"
+                            tableValue = 1
+                        } else if (hr == 12 && min == 24) {
+                            colour = '#0099ff';
+                            slot = 5;
+                            periodName = "Elective VI"
+                            Stime = "2:00-2:50pm"
+                            tableValue = 1
+                        } else if (hr == 12 && min == 26) {
+                            colour = '#0099ff';
+                            slot = 6;
+                            periodName = "Control Engineering(402)" + "\n" + ControlELink2st
+                            Stime = "3:00-3:50pm"
+                            tableValue = 1
+                        } else if (hr == 22 && min == 59) {
+                            colour = '#0099ff';
 
-                        slot = 7;
-                        periodName = "Operations Research(411)"
-                        Stime = "4:00-4:50pm"
-                        tableValue = 1
+                            slot = 7;
+                            periodName = "Operations Research(411)"
+                            Stime = "4:00-4:50pm"
+                            tableValue = 1
+                        }
+                        break;
                     }
+
 
 
             }
@@ -1115,6 +1157,7 @@ bot.on('messageReactionRemove', async(reaction, user) => {
 
 
 })
+
 
 
 bot.login(process.env.TOKEN);
