@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 
-
 const PREFIX = '?';
 const Prefix = "!";
 
@@ -636,7 +635,7 @@ bot.on('message', message => {
 
 
 
-    if ("sat=" == words[0].toLowerCase() && message.channel.id == '787705631632523285') {
+    if ("sat=" == words[0].toLowerCase()&& message.channel.id == '787705631632523285') {
         thisSaturday = words[1].toLowerCase();
         switch (thisSaturday) {
             case 'mon':
@@ -654,21 +653,24 @@ bot.on('message', message => {
             case "fri":
                 dayText = "Friday";
                 break;
+            default:
+                dayText = "❓day"
         }
-        message.channel.send("(noted)😉👍" + "\n" + "This SATURDAY is our New " + dayText)
+        message.channel.send("This SATURDAY is our New " + dayText + "!" + "\n" + "(noted)😉👍")
     } else if ("#cel2" == words[0]) {
         ControlELink2st = words[1]
     } else if ("#celReset" == words[0]) {
         ControlELink1st = " "
         ControlELink2st = " "
     }
-    if (message.content === "timeloop" && message.channel.id == '787705631632523285') {
+    if (message.content == "timeloop"&& message.channel.id == '787705631632523285') {
         var interval = setInterval(() => {
             d = new Date();
             hr = d.getHours();
             min = d.getMinutes();
             sec = d.getSeconds();
             day = d.getDay();
+          
             tableValue = 0;
             tableTodaySValue = 0;
 
@@ -680,6 +682,11 @@ bot.on('message', message => {
                     }
                     break;
                 case 6:
+                    if (thisSaturday != "none") {
+                        if (hr == 7 && min == 30) {
+                            message.channel.send('**' + "```diff" + '\n' + "Today is a Working Day!!" + "\n" + "```" + '**')
+                        }
+                    }
 
                 case 1:
                     if (day == "1" || thisSaturday == "mon") {
