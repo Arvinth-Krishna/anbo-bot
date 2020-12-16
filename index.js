@@ -775,8 +775,8 @@ bot.on('message', message => {
                         colour = '#fc8621';
 
                         tableHeader = "**Wednesday's TimeTable**" +
-                            "\n" + "\n" + "1) **8:50-9:40am** -- TOE(242)/ IT Essentials(377)/ Elective VI" +
-                            "\n" + "\n" + "2) **9:50-10:40am** -- TOE(242) / IT Essentials(377)" +
+                            "\n" + "\n" + "1) **8:50-9:40am** -- TOE(242)/ Elective VI" +
+                            "\n" + "\n" + "2) **9:50-10:40am** -- TOE(242)/ IT Essentials(377)" +
                             "\n" + "\n" + "3) **11:00-11:50am** -- Operations Research(411)" +
                             "\n" + "\n" + "4) **12:00-12:50pm** -- IT Essentials(377)" +
                             "\n" + "\n" + "5) **2:00-2:50pm** -- Control Engineering(402)" +
@@ -787,13 +787,13 @@ bot.on('message', message => {
                     } else if (hr == 8 && min == 40) {
                         colour = '#fc8621';
                         slot = 1;
-                        periodName = "TOE(242)/ IT Essentials(377)/ Elective VI"
+                        periodName = "TOE(242)/ Elective VI"
                         Stime = "8:50-9:40am"
                         tableValue = 1
                     } else if (hr == 9 && min == 40) {
                         colour = '#fc8621';
                         slot = 2;
-                        periodName = "TOE(242) / IT Essentials(377)"
+                        periodName = "TOE(242)/ IT Essentials(377)"
                         Stime = "9:50-10:40am"
                         tableValue = 1
                     } else if (hr == 10 && min == 50) {
