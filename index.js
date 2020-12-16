@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 
+
 const PREFIX = '?';
 const Prefix = "!";
 
@@ -614,8 +615,9 @@ bot.on('message', message => {
             const lectureVideos = new Discord.MessageEmbed()
                 .setColor('#3282b8')
                 .setTitle('Lecture Videos✌!!')
-                .setDescription("\n" + "[Control Engineering](https://bit.ly/ceLectureVideos)" + "\n" + "\n" +
-                    "[Operations Research](https://bit.ly/oprLectureVideos)" + "\n" + "\n" +
+                .setDescription("\n" + "[Control Engineering](https://bit.ly/ceLectureVideosFromMechC)" + "\n" + "\n" +
+                    "[Operations Research from Mech C & D](https://bit.ly/oprLectureVideos)" + "\n" + "\n" +
+                    "[Advanced Materials & Processes](https://web.microsoftstream.com/channel/e7ea6602-42fc-4fae-9ff9-8433d95b8aca)" + "\n" + "\n" +
                     "[Lean Manufacturing](https://bit.ly/leLectureVideos)" + "\n" + ".")
                 .setFooter("🕉 Namah Shivaya")
             message.channel.send(lectureVideos)
@@ -635,7 +637,7 @@ bot.on('message', message => {
 
 
 
-    if ("sat=" == words[0].toLowerCase()&& message.channel.id == '787705631632523285') {
+    if ("sat=" == words[0].toLowerCase() && message.channel.id == '787705631632523285') {
         thisSaturday = words[1].toLowerCase();
         switch (thisSaturday) {
             case 'mon':
@@ -663,14 +665,14 @@ bot.on('message', message => {
         ControlELink1st = " "
         ControlELink2st = " "
     }
-    if (message.content == "timeloop"&& message.channel.id == '787705631632523285') {
+    if (message.content === "timeloop" && message.channel.id == '787705631632523285') {
         var interval = setInterval(() => {
             d = new Date();
             hr = d.getHours();
             min = d.getMinutes();
             sec = d.getSeconds();
             day = d.getDay();
-          
+
             tableValue = 0;
             tableTodaySValue = 0;
 
@@ -1164,7 +1166,6 @@ bot.on('messageReactionRemove', async(reaction, user) => {
 
 
 })
-
 
 
 bot.login(process.env.TOKEN);
