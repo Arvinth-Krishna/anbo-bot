@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
-const token = 'NzgxMDE3NDc3ODE1NTk5MTA1.X73hNQ.KE8HUMMFRgH48koFxIxP_oKAsxI';
+
 
 
 const PREFIX = '?';
