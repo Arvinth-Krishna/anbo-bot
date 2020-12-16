@@ -684,7 +684,7 @@ bot.on('message', message => {
                 case 6:
                     if (thisSaturday != "none") {
                         if (hr == 7 && min == 30) {
-                            message.channel.send('**' + "```diff" + '\n' + "Today is a Working Day!!" + "\n" + "```" + '**')
+                            message.channel.send('**' + "```diff" + '\n' + "+ Today is a Working Day!!" + "\n" + "```" + '**')
                         }
                     }
 
