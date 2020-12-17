@@ -614,9 +614,9 @@ bot.on('message', message => {
             message.delete();
             const lectureVideos = new Discord.MessageEmbed()
                 .setColor('#3282b8')
-                .setTitle('Lecture Videos✌!!')
+                .setTitle('Lecture Recordings✌!!  (#lecture)')
                 .setDescription("\n" + "[Control Engineering](https://bit.ly/ceLectureRecordings)" + "\n" + "\n" +
-                    "[Operations Research from Mech C & D](https://bit.ly/oprLectureRecordings)" + "\n" + "\n" +
+                    "[Operations Research for Mech C & D](https://bit.ly/oprLectureRecordings)" + "\n" + "\n" +
                     "[Advanced Materials & Processes](https://bit.ly/ampLectureRecordings)" + "\n" + "\n" +
                     "[Lean Manufacturing](https://bit.ly/leLectureVideos)" + "\n" + ".")
                 .setFooter("🕉 Namah Shivaya")
