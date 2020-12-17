@@ -665,7 +665,7 @@ bot.on('message', message => {
         ControlELink1st = " "
         ControlELink2st = " "
     }
-    if (message.content === "timeloop" && message.channel.id == '787705631632523285') {
+    if (message.content === "program update" && message.channel.id == '787705631632523285') {
         var interval = setInterval(() => {
             d = new Date();
             hr = d.getHours();
