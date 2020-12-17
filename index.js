@@ -615,9 +615,9 @@ bot.on('message', message => {
             const lectureVideos = new Discord.MessageEmbed()
                 .setColor('#3282b8')
                 .setTitle('Lecture Videos✌!!')
-                .setDescription("\n" + "[Control Engineering](https://bit.ly/ceLectureVideosFromMechC)" + "\n" + "\n" +
-                    "[Operations Research from Mech C & D](https://bit.ly/oprLectureVideos)" + "\n" + "\n" +
-                    "[Advanced Materials & Processes](https://web.microsoftstream.com/channel/e7ea6602-42fc-4fae-9ff9-8433d95b8aca)" + "\n" + "\n" +
+                .setDescription("\n" + "[Control Engineering](https://bit.ly/ceLectureRecordings)" + "\n" + "\n" +
+                    "[Operations Research from Mech C & D](https://bit.ly/oprLectureRecordings)" + "\n" + "\n" +
+                    "[Advanced Materials & Processes](https://bit.ly/ampLectureRecordings)" + "\n" + "\n" +
                     "[Lean Manufacturing](https://bit.ly/leLectureVideos)" + "\n" + ".")
                 .setFooter("🕉 Namah Shivaya")
             message.channel.send(lectureVideos)
