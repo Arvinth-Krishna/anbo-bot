@@ -1113,6 +1113,10 @@ bot.on('message', message => {
             }
 
             if (hr == 0 && min == 0) {
+                        oprLink1 = "none"
+                        oprLink2 = "none"
+                        ControlELink1st = "none"
+                        ControlELink2st = "none"
                 console.log("im inside autodelete")
                 message.channel.messages.fetch({ limit: 100 })
                     .then(fetched => {
