@@ -690,7 +690,7 @@ bot.on('message', message => {
             console.log(hr + " " + min + " " + sec + " " + day);
             switch (day) {
                 case 7:
-                    if ((hr == 0 && min == 0) || (hr == 6 && min == 0)) {
+                    if ((hr == 0 && min == 0) || (hr == 4 && min == 0)) {
                         thisSaturday = "none";
                         oprLink1 = "none"
                         oprLink2 = "none"
@@ -700,7 +700,7 @@ bot.on('message', message => {
                     break;
                 case 6:
                     if (thisSaturday != "none") {
-                        if (hr == 7 && min == 30) {
+                        if (hr == 6 && min == 30) {
                             message.channel.send('**' + "```diff" + '\n' + "+ Today is a Working Day!!" + "\n" + "```" + '**')
                         }
                     }
@@ -708,7 +708,7 @@ bot.on('message', message => {
                 case 1:
                     if (day == "1" || thisSaturday == "mon") {
 
-                        if (hr == 7 && min == 30) {
+                        if (hr == 6 && min == 30) {
                             colour = '#ff4646';
                             today = "Monday's TimeTable"
                             tableHeader = "**Monday's TimeTable**" +
@@ -771,7 +771,7 @@ bot.on('message', message => {
                     }
                 case 2:
                     if (day == "2" || thisSaturday == "tue") {
-                        if (hr == 7 && min == 30) {
+                        if (hr == 6 && min == 30) {
                             colour = '#61b15a';
 
                             tableHeader = "**Tuesday's TimeTable**" +
@@ -780,7 +780,7 @@ bot.on('message', message => {
                                 "\n" + "\n" + "3) **11:00-11:50am** -- IT Essentials(377)/ Elective VI" +
                                 "\n" + "\n" + "4) **12:00-12:50pm** -- Operations Research(411)" +
                                 "\n" + "\n" + "5) **2:00-2:50pm** -- Control Engineering(402)" +
-                                "\n" + "\n" + "6) **3:00-3:50pm** -- Free🥳" +
+                                "\n" + "\n" + "6) **3:00-3:50pm** -- A,B,D(Mentoring) & C(Free🥳)" +
                                 "\n" + "\n" + "7) **4:00-4:50pm** -- Operations Research(411)" + "\n" + "."
 
                             tableTodaySValue = 1
@@ -819,7 +819,7 @@ bot.on('message', message => {
                         } else if (hr == 14 && min == 50) {
                             colour = '#61b15a';
                             slot = 6;
-                            periodName = "Free🥳"
+                            periodName = "A,B,D(Mentoring) & C(Free🥳)"
                             Stime = "3:00-3:50pm"
                             tableValue = 1
                         } else if (hr == 15 && min == 50) {
@@ -834,17 +834,17 @@ bot.on('message', message => {
                     }
                 case 3:
                     if (day == "3" || thisSaturday == "wed") {
-                        if (hr == 7 && min == 30) {
+                        if (hr == 6 && min == 30) {
                             colour = '#fc8621';
 
                             tableHeader = "**Wednesday's TimeTable**" +
                                 "\n" + "\n" + "1) **8:50-9:40am** -- TOE(242)/ Elective VI" +
                                 "\n" + "\n" + "2) **9:50-10:40am** -- TOE(242)/ IT Essentials(377)" +
                                 "\n" + "\n" + "3) **11:00-11:50am** -- Operations Research(411)" +
-                                "\n" + "\n" + "4) **12:00-12:50pm** -- IT Essentials(377)" +
+                                "\n" + "\n" + "4) **12:00-12:50pm** -- Elective VI/ IT Essentials(377)" +
                                 "\n" + "\n" + "5) **2:00-2:50pm** -- Control Engineering(402)" +
-                                "\n" + "\n" + "6) **3:00-3:50pm** -- Free🥳" +
-                                "\n" + "\n" + "7) **4:00-4:50pm** -- Elective VI" + "\n" + "."
+                                "\n" + "\n" + "6) **3:00-3:50pm** -- A,B,D(Free🥳) & C(Mentoring)" +
+                                "\n" + "\n" + "7) **4:00-4:50pm** -- Control Engineering(402)" + "\n" + "."
 
                             tableTodaySValue = 1
                         } else if (hr == 8 && min == 40) {
@@ -881,13 +881,13 @@ bot.on('message', message => {
                         } else if (hr == 14 && min == 50) {
                             colour = '#fc8621';
                             slot = 6;
-                            periodName = "Free🥳"
+                            periodName = "A,B,D(Free🥳) & C(Mentoring)"
                             Stime = "3:00-3:50pm"
                             tableValue = 1
                         } else if (hr == 15 && min == 50) {
                             colour = '#fc8621';
                             slot = 7;
-                            periodName = "Elective VI"
+                            periodName = "Control Engineering(402)"
                             Stime = "4:00-4:50pm"
                             tableValue = 1
                         }
@@ -895,13 +895,13 @@ bot.on('message', message => {
                     }
                 case 4:
                     if (day == "4" || thisSaturday == "thur") {
-                        if (hr == 7 && min == 30) {
+                        if (hr == 6 && min == 30) {
                             colour = '#9d0191';
 
                             tableHeader = "**Thursday's TimeTable**" +
                                 "\n" + "\n" + "1) **8:50-9:40am** -- TOE(242)/ IT Essentials(377)/ Elective VI" +
                                 "\n" + "\n" + "2) **9:50-10:40am** -- TOE(242)" +
-                                "\n" + "\n" + "3) **11:00-11:50am** -- Control Engineering(402)" +
+                                "\n" + "\n" + "3) **11:00-11:50am** -- IT Essentials(377)" +
                                 "\n" + "\n" + "4) **12:00-12:50pm** -- Operations Research(411)" +
                                 "\n" + "\n" + "5) **2:00-2:50pm** -- IT Essentials(377)/ Elective VI" +
                                 "\n" + "\n" + "6) **3:00-3:50pm** -- IT Essentials(377)" +
@@ -923,8 +923,7 @@ bot.on('message', message => {
                         } else if (hr == 10 && min == 50) {
                             colour = '#9d0191';
                             slot = 3;
-                            if (ControlELink1st == "none" && day != 6) { ControlELink1st = "https://bit.ly/CEthursLink1MsTeams" }
-                            periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + ControlELink1st
+                            periodName = "IT Essentials(377)"
                             Stime = "11:00-11:50am"
                             tableValue = 1
                         } else if (hr == 11 && min == 50) {
@@ -949,8 +948,8 @@ bot.on('message', message => {
                         } else if (hr == 15 && min == 50) {
                             colour = '#9d0191';
                             slot = 7;
-                            if (ControlELink2st == "none" && day != 6) { ControlELink2st = "https://bit.ly/CEthursLink2MsTeams" }
-                            periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + ControlELink2st
+                            if (ControlELink1st == "none" && day != 6) { ControlELink1st = "https://bit.ly/CEthursLink2MsTeams" }
+                            periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + ControlELink1st
                             Stime = "4:00-4:50pm"
                             tableValue = 1
                         }
@@ -958,16 +957,16 @@ bot.on('message', message => {
                     }
                 case 5:
                     if (day == "5" || thisSaturday == "fri") {
-                        if (hr == 7 && min == 30) {
+                        if (hr == 6 && min == 30) {
                             colour = '#0099ff';
 
                             tableHeader = "**Friday's TimeTable**" +
                                 "\n" + "\n" + "1) **8:50-9:40am** -- TOE(242)/ Elective VI" +
                                 "\n" + "\n" + "2) **9:50-10:40am** -- TOE(242)/ IT Essentials(377)" +
                                 "\n" + "\n" + "3) **11:00-11:50am** -- Operations Research(411)" +
-                                "\n" + "\n" + "4) **12:00-12:50pm** -- Control Engineering(402)" +
+                                "\n" + "\n" + "4) **12:00-12:50pm** -- IT Essentials(377)" +
                                 "\n" + "\n" + "5) **2:00-2:50pm** -- Elective VI" +
-                                "\n" + "\n" + "6) **3:00-3:50pm** -- Free🥳" +
+                                "\n" + "\n" + "6) **3:00-3:50pm** -- Control Engineering(402)" +
                                 "\n" + "\n" + "7) **4:00-4:50pm** -- Operations Research(411)" + "\n" + "."
 
                             tableTodaySValue = 1
@@ -993,8 +992,7 @@ bot.on('message', message => {
                         } else if (hr == 11 && min == 50) {
                             colour = '#0099ff';
                             slot = 4;
-                            if (ControlELink1st == "none" && day != 6) { ControlELink1st = "https://bit.ly/CEfriLink1MsTeams" }
-                            periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + ControlELink1st
+                            periodName = "IT Essentials(377)"
                             Stime = "12:00-12:50pm"
                             tableValue = 1
                         } else if (hr == 13 && min == 50) {
@@ -1006,7 +1004,8 @@ bot.on('message', message => {
                         } else if (hr == 14 && min == 50) {
                             colour = '#0099ff';
                             slot = 6;
-                            periodName = "Free🥳"
+                            if (ControlELink1st == "none" && day != 6) { ControlELink1st = "https://bit.ly/CEfriLink1MsTeams" }
+                            periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + ControlELink1st
                             Stime = "3:00-3:50pm"
                             tableValue = 1
                         } else if (hr == 15 && min == 50) {
@@ -1208,6 +1207,7 @@ bot.on('messageReactionRemove', async(reaction, user) => {
 
 
 })
+
 
 
 
