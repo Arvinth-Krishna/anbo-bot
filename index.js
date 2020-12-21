@@ -28,7 +28,7 @@ bot.on('ready', () => {
             console.log("Bot is online!")
             bot.channels.cache.get('787705631632523285').send('program update')
             bot.channels.cache.get('787705631632523285').send('Dyno Cycling (program restart)').then(msg => {
-                msg.delete({ timeout: 60000 })
+                msg.delete({ timeout: 120000 })
 
                 console.log("dyno sec value " + second)
                 clearInterval(dyno)
@@ -740,7 +740,7 @@ bot.on('message', message => {
                         }
                     }
 
-                case 1:
+                case 10:
                     if (day == "1" || thisSaturday == "mon") {
 
                         if (hr == 6 && min == 30) {
@@ -794,7 +794,7 @@ bot.on('message', message => {
                             periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + ControlELink2st
                             Stime = "3:00-3:50pm"
                             tableValue = 1
-                        } else if (hr == 17 && min == 30) {
+                        } else if ((hr == 17 && min == 30) && day != 6) {
                             colour = '#61b15a';
                             message.channel.send('**' + "```diff" + '\n' + "+ Tomorrow's Timetable!!" + "\n" + "```" + '**')
                             tableHeader = "**Tuesday's TimeTable**" +
@@ -870,7 +870,7 @@ bot.on('message', message => {
                             periodName = "A,B,D(Mentoring) & C(Free🥳)"
                             Stime = "3:00-3:50pm"
                             tableValue = 1
-                        } else if (hr == 17 && min == 30) {
+                        } else if ((hr == 17 && min == 30) && day != 6) {
                             colour = '#fc8621';
                             message.channel.send('**' + "```diff" + '\n' + "+ Tomorrow's Timetable!!" + "\n" + "```" + '**')
                             tableHeader = "**Wednesday's TimeTable**" +
@@ -945,7 +945,7 @@ bot.on('message', message => {
                             periodName = "A,B,D(Free🥳) & C(Mentoring)"
                             Stime = "3:00-3:50pm"
                             tableValue = 1
-                        } else if (hr == 17 && min == 30) {
+                        } else if ((hr == 17 && min == 30) && day != 6) {
                             colour = '#9d0191';
                             message.channel.send('**' + "```diff" + '\n' + "+ Tomorrow's Timetable!!" + "\n" + "```" + '**')
                             tableHeader = "**Thursday's TimeTable**" +
@@ -1019,7 +1019,7 @@ bot.on('message', message => {
                             periodName = "IT Essentials(377)"
                             Stime = "3:00-3:50pm"
                             tableValue = 1
-                        } else if (hr == 17 && min == 30) {
+                        } else if ((hr == 17 && min == 30) && day != 6) {
                             colour = '#0099ff';
                             message.channel.send('**' + "```diff" + '\n' + "+ Tomorrow's Timetable!!" + "\n" + "```" + '**')
                             tableHeader = "**Friday's TimeTable**" +
@@ -1109,8 +1109,8 @@ bot.on('message', message => {
                         }
                         break;
                     }
-                case 50:
-                    if (day == "5" || thisSaturday == "test") {
+                case 1:
+                    if (day == "1" || thisSaturday == "test") {
                         if (hr == 21 && min == 32) {
                             colour = '#0099ff';
 
@@ -1124,19 +1124,19 @@ bot.on('message', message => {
                                 "\n" + "\n" + "7) **4:00-4:50pm** -- Operations Research(411)" + "\n" + "."
 
                             tableTodaySValue = 1
-                        } else if (hr == 21 && min == 27) {
+                        } else if (hr == 17 && min == 40) {
                             colour = '#0099ff';
                             slot = 1;
                             periodName = "TOE(242)/ Elective VI"
                             Stime = "8:50-9:40am"
                             tableValue = 1
-                        } else if (hr == 17 && min == 59) {
+                        } else if (hr == 17 && min == 49) {
                             colour = '#0099ff';
                             slot = 2;
                             periodName = "TOE(242)/ IT Essentials(377)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + "https://bit.ly/OPfriLink2MsTeams"
                             Stime = "9:50-10:40am"
                             tableValue = 1
-                        } else if (hr == 21 && min == 42) {
+                        } else if (hr == 17 && min == 47) {
                             colour = '#0099ff';
                             slot = 3;
                             if (oprLink1 == "none") { oprLink1 = "https://bit.ly/OPmonLink1MsTeams" } else if (oprLink1 == "none" && day == 6) { oprLink1 = "No Link😝 (not entered)" }
@@ -1187,6 +1187,14 @@ bot.on('message', message => {
                 bot.channels.cache.get('787705631632523285').send(Period).then(msg => {
                     msg.delete({ timeout: 3560000 })
                 });
+                onlyPeriodSplit = periodName.split("\n")
+                onlyPeriod = onlyPeriodSplit[0]
+
+                setTimeout(() => {
+                    bot.channels.cache.get('787705631632523285').send("🔔-**" + onlyPeriod + "**" + "\n" + " Class Started Guyzz🤘!!").then(msg => {
+                        msg.delete({ timeout: 60000 })
+                    });
+                }, 600000)
 
             }
             if (tableTodaySValue == 1) {
@@ -1295,6 +1303,5 @@ bot.on('messageReactionRemove', async(reaction, user) => {
 
 
 })
-
 
 bot.login(process.env.TOKEN);
