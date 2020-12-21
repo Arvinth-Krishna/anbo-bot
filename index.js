@@ -21,14 +21,16 @@ oprLink2 = "none"
 bot.on('ready', () => {
 
     dyno = setInterval(() => {
+        console.log("Bot is online!")
 
         trigger = new Date();
         second = trigger.getSeconds();
         if (second == 0) {
-            console.log("Bot is online!")
             bot.channels.cache.get('787705631632523285').send('program update')
             bot.channels.cache.get('787705631632523285').send('Dyno Cycling (program restart)').then(msg => {
                 msg.delete({ timeout: 120000 })
+                bot.channels.cache.get('787217077239808011').send('Dyno Cycling (program restart)')
+
 
                 console.log("dyno sec value " + second)
                 clearInterval(dyno)
@@ -740,7 +742,7 @@ bot.on('message', message => {
                         }
                     }
 
-                case 10:
+                case 1:
                     if (day == "1" || thisSaturday == "mon") {
 
                         if (hr == 6 && min == 30) {
@@ -1109,7 +1111,7 @@ bot.on('message', message => {
                         }
                         break;
                     }
-                case 1:
+                case 10:
                     if (day == "1" || thisSaturday == "test") {
                         if (hr == 21 && min == 32) {
                             colour = '#0099ff';
@@ -1303,5 +1305,8 @@ bot.on('messageReactionRemove', async(reaction, user) => {
 
 
 })
+
+
+
 
 bot.login(process.env.TOKEN);
