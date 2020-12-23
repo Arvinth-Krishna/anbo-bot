@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 
-
 const PREFIX = '?';
 const Prefix = "!";
 
@@ -19,17 +18,16 @@ oprLink1 = "none"
 oprLink2 = "none"
 
 bot.on('ready', () => {
-
+    console.log("Bot is online!")
     dyno = setInterval(() => {
-        console.log("Bot is online!")
 
         trigger = new Date();
         second = trigger.getSeconds();
         if (second == 0) {
             bot.channels.cache.get('787705631632523285').send('program update')
-            bot.channels.cache.get('787705631632523285').send('Dyno Cycling (program restart)').then(msg => {
+            bot.channels.cache.get('787705631632523285').send('Dyno Cycling (server restart)').then(msg => {
                 msg.delete({ timeout: 120000 })
-                bot.channels.cache.get('787217077239808011').send('Dyno Cycling (program restart)')
+                bot.channels.cache.get('787217077239808011').send('Dyno Cycling (server restart)')
 
 
                 console.log("dyno sec value " + second)
@@ -938,6 +936,7 @@ bot.on('message', message => {
                         } else if (hr == 13 && min == 50) {
                             colour = '#fc8621';
                             slot = 5;
+                            Stime = "2:00-2:50pm"
                             if (ControlELink1st == "none") { ControlELink1st = "https://bit.ly/CEwedLink1Msteams" }
                             periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + ControlELink1st
                             tableValue = 1
@@ -1193,7 +1192,7 @@ bot.on('message', message => {
                 onlyPeriod = onlyPeriodSplit[0]
 
                 setTimeout(() => {
-                    bot.channels.cache.get('787705631632523285').send("🔔-**" + onlyPeriod + "**" + "\n" + " Class Started Guyzz🤘!!").then(msg => {
+                    bot.channels.cache.get('787705631632523285').send("🔔-**" + onlyPeriod + "**" + "\n" + "🤘Guyzz...Class Started !!").then(msg => {
                         msg.delete({ timeout: 60000 })
                     });
                 }, 600000)
@@ -1305,8 +1304,5 @@ bot.on('messageReactionRemove', async(reaction, user) => {
 
 
 })
-
-
-
 
 bot.login(process.env.TOKEN);
