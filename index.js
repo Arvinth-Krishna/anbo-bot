@@ -715,14 +715,14 @@ bot.on('message', message => {
 
             console.log(hr + " " + min + " " + sec + " " + day);
             switch (day) {
-                case 7:
+                case 0:
                     if ((hr == 0 && min == 0) || (hr == 4 && min == 0)) {
                         thisSaturday = "none";
                         oprLink1 = "none"
                         oprLink2 = "none"
                         ControlELink1st = "none"
                         ControlELink2st = "none"
-                    } else if (hr == 21 && min == 20) {
+                    } else if (hr == 21 && min == 25) {
                         colour = '#ff4646';
                         message.channel.send('**' + "```diff" + '\n' + "+ Tomorrow's Timetable!!" + "\n" + "```" + '**')
                         tableHeader = "**Monday's TimeTable**" +
