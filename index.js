@@ -722,7 +722,7 @@ bot.on('message', message => {
                         oprLink2 = "none"
                         ControlELink1st = "none"
                         ControlELink2st = "none"
-                    } else if (hr == 21 && min == 25) {
+                    } else if (hr == 17 && min == 30) {
                         colour = '#ff4646';
                         message.channel.send('**' + "```diff" + '\n' + "+ Tomorrow's Timetable!!" + "\n" + "```" + '**')
                         tableHeader = "**Monday's TimeTable**" +
