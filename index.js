@@ -530,6 +530,8 @@ bot.on('message', message => {
 bot.on('message', message => {
 
     let commandWord = message.content.substring(PREFIX.length).split(" ");
+    let tableEchoHeaderPara =message.content.split("\n");
+    let tabelEchoHeader=tableEchoHeaderPara[1];
     links = commandWord[0].toLowerCase();
 
     switch (links) {
@@ -640,6 +642,9 @@ bot.on('message', message => {
                 .setFooter("🕉 Namah Shivaya")
             message.channel.send(lectureVideos)
             break;
+       case "ttecho":
+            bot.channels.cache.get('787705631632523285').send(tabelEchoHeader);
+            break;
 
 
 
@@ -717,7 +722,7 @@ bot.on('message', message => {
                         oprLink2 = "none"
                         ControlELink1st = "none"
                         ControlELink2st = "none"
-                    } else if (hr == 21 && min == 0) {
+                    } else if (hr == 21 && min == 20) {
                         colour = '#ff4646';
                         message.channel.send('**' + "```diff" + '\n' + "+ Tomorrow's Timetable!!" + "\n" + "```" + '**')
                         tableHeader = "**Monday's TimeTable**" +
@@ -730,7 +735,7 @@ bot.on('message', message => {
                             "\n" + "\n" + "7) **4:00-4:50pm** -- Operations Research(411)" + "\n" + "."
 
                         tableTodaySValue = 1
-                    } else
+                    } 
 
                         break;
                 case 6:
