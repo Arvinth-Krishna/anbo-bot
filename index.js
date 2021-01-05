@@ -16,6 +16,7 @@ ControlELink2st = "none"
 dynoValue = 0
 oprLink1 = "none"
 oprLink2 = "none"
+friTomHeader = false;
 
 bot.on('ready', () => {
     console.log("Bot is online!")
@@ -24,8 +25,8 @@ bot.on('ready', () => {
         trigger = new Date();
         second = trigger.getSeconds();
         if (second == 0) {
-            bot.channels.cache.get('787705631632523285').send('program update')
-            bot.channels.cache.get('787705631632523285').send('Dyno Cycling (server restart)').then(msg => {
+            bot.channels.cache.get('787705631632523285').send('Timetable ON')
+            bot.channels.cache.get('787705631632523285').send('Dyno Cycling (Heroku server restart)').then(msg => {
                 msg.delete({ timeout: 120000 })
                 bot.channels.cache.get('787217077239808011').send('Dyno Cycling (server restart)')
 
@@ -530,8 +531,8 @@ bot.on('message', message => {
 bot.on('message', message => {
 
     let commandWord = message.content.substring(PREFIX.length).split(" ");
-    let tableEchoHeaderPara =message.content.split("\n");
-    let tabelEchoHeader=tableEchoHeaderPara[1];
+    let tableEchoHeaderPara = message.content.split("\n");
+    let tabelEchoHeader = tableEchoHeaderPara[1];
     links = commandWord[0].toLowerCase();
 
     switch (links) {
@@ -642,7 +643,7 @@ bot.on('message', message => {
                 .setFooter("🕉 Namah Shivaya")
             message.channel.send(lectureVideos)
             break;
-       case "ttecho":
+        case "ttecho":
             bot.channels.cache.get('787705631632523285').send(tabelEchoHeader);
             break;
 
@@ -701,7 +702,7 @@ bot.on('message', message => {
         oprLink1 = "none"
         oprLink2 = "none"
     }
-    if (message.content === "program update" && (message.channel.id == '787705631632523285' || message.channel.id == '787561621899837461' || message.channel.id == '787217077239808011')) {
+    if (message.content === "Timetable ON" && (message.channel.id == '787705631632523285' || message.channel.id == '787561621899837461' || message.channel.id == '787217077239808011')) {
         message.delete()
         var interval = setInterval(() => {
             d = new Date();
@@ -735,20 +736,119 @@ bot.on('message', message => {
                             "\n" + "\n" + "7) **4:00-4:50pm** -- Operations Research(411)" + "\n" + "."
 
                         tableTodaySValue = 1
-                    } 
+                    }
 
-                        break;
+                    break;
                 case 6:
                     if (thisSaturday != "none") {
                         if (hr == 6 && min == 30) {
                             message.channel.send('**' + "```diff" + '\n' + "+ Today is a Working Day!!" + "\n" + "```" + '**')
                         }
                     }
+                case 5:
+                    if (day == "5" || thisSaturday == "fri") {
+                        if (hr == 6 && min == 30) {
+                            colour = '#0099ff';
+
+                            tableHeader = "**Friday's TimeTable**" +
+                                "\n" + "\n" + "1) **8:50-9:40am** -- TOE(242)/ Elective VI" +
+                                "\n" + "\n" + "2) **9:50-10:40am** -- TOE(242)/ IT Essentials(377)" +
+                                "\n" + "\n" + "3) **11:00-11:50am** -- Operations Research(411)" +
+                                "\n" + "\n" + "4) **12:00-12:50pm** -- IT Essentials(377)" +
+                                "\n" + "\n" + "5) **2:00-2:50pm** -- Elective VI" +
+                                "\n" + "\n" + "6) **3:00-3:50pm** -- Control Engineering(402)" +
+                                "\n" + "\n" + "7) **4:00-4:50pm** -- Operations Research(411)" + "\n" + "."
+
+                            tableTodaySValue = 1
+                            break;
+                        } else if (hr == 8 && min == 40) {
+                            colour = '#0099ff';
+                            slot = 1;
+                            periodName = "TOE(242)/ Elective VI"
+                            Stime = "8:50-9:40am"
+                            tableValue = 1
+
+                        } else if (hr == 9 && min == 40) {
+                            colour = '#0099ff';
+                            slot = 2;
+                            periodName = "TOE(242)/ IT Essentials(377)"
+                            Stime = "9:50-10:40am"
+                            tableValue = 1
+
+                        } else if (hr == 10 && min == 50) {
+                            colour = '#0099ff';
+                            slot = 3;
+                            if (oprLink1 == "none" && day != 6) { oprLink1 = "https://bit.ly/OPfriLink1MsTeams" } else if (oprLink1 == "none" && day == 6) { oprLink1 = "No Link😝 (not entered)" }
+                            periodName = "Operations Research(411)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + oprLink1
+                            Stime = "11:00-11:50am"
+                            tableValue = 1
+
+                        } else if (hr == 11 && min == 50) {
+                            colour = '#0099ff';
+                            slot = 4;
+                            periodName = "IT Essentials(377)"
+                            Stime = "12:00-12:50pm"
+                            tableValue = 1
+
+                        } else if (hr == 13 && min == 50) {
+                            colour = '#0099ff';
+                            slot = 5;
+                            periodName = "Elective VI"
+                            Stime = "2:00-2:50pm"
+                            tableValue = 1
+
+                        } else if (hr == 14 && min == 50) {
+                            colour = '#0099ff';
+                            slot = 6;
+                            if (ControlELink1st == "none") { ControlELink1st = "https://bit.ly/CEfriLink1MsTeams" }
+                            periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + ControlELink1st
+                            Stime = "3:00-3:50pm"
+                            tableValue = 1
+
+                        } else if (hr == 15 && min == 50) {
+                            colour = '#0099ff';
+                            slot = 7;
+                            if (oprLink2 == "none" && day != 6) { oprLink2 = "https://bit.ly/OPfriLink2MsTeams" } else if (oprLink2 == "none" && day == 6) { oprLink2 = "No Link😝 (not entered)" }
+                            periodName = "Operations Research(411)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + oprLink2
+                            Stime = "4:00-4:50pm"
+                            tableValue = 1
+                            oprLink1 = "none"
+                            oprLink2 = "none"
+                            ControlELink1st = "none"
+                            ControlELink2st = "none"
+
+                        } else if ((hr == 19 && min == 30) && day != 6) {
+                            message.channel.send('**' + "```diff" + '\n' + "+ Tommorow is a Working Day!!" + "\n" + "```" + '**')
+                            if (thisSaturday = "fri") {
+                                colour = '#0099ff';
+
+                                tableHeader = "**Friday's TimeTable**" +
+                                    "\n" + "\n" + "1) **8:50-9:40am** -- TOE(242)/ Elective VI" +
+                                    "\n" + "\n" + "2) **9:50-10:40am** -- TOE(242)/ IT Essentials(377)" +
+                                    "\n" + "\n" + "3) **11:00-11:50am** -- Operations Research(411)" +
+                                    "\n" + "\n" + "4) **12:00-12:50pm** -- IT Essentials(377)" +
+                                    "\n" + "\n" + "5) **2:00-2:50pm** -- Elective VI" +
+                                    "\n" + "\n" + "6) **3:00-3:50pm** -- Control Engineering(402)" +
+                                    "\n" + "\n" + "7) **4:00-4:50pm** -- Operations Research(411)" + "\n" + "."
+
+                                tableTodaySValue = 1
+                                break;
+                            }
+
+                            friTomHeader = true;
+
+
+
+
+                        }
+
+
+                    }
 
                 case 1:
                     if (day == "1" || thisSaturday == "mon") {
 
-                        if (hr == 6 && min == 30) {
+                        if ((hr == 6 && min == 30) || friTomHeader) {
                             colour = '#ff4646';
                             today = "Monday's TimeTable"
                             tableHeader = "**Monday's TimeTable**" +
@@ -761,6 +861,7 @@ bot.on('message', message => {
                                 "\n" + "\n" + "7) **4:00-4:50pm** -- Operations Research(411)" + "\n" + "."
 
                             tableTodaySValue = 1
+
                         } else if (hr == 8 && min == 40) {
                             colour = '#ff4646';
                             slot = 1;
@@ -824,7 +925,7 @@ bot.on('message', message => {
                     }
                 case 2:
                     if (day == "2" || thisSaturday == "tue") {
-                        if (hr == 6 && min == 30) {
+                        if ((hr == 6 && min == 30) || friTomHeader) {
                             colour = '#61b15a';
 
                             tableHeader = "**Tuesday's TimeTable**" +
@@ -900,7 +1001,7 @@ bot.on('message', message => {
                     }
                 case 3:
                     if (day == "3" || thisSaturday == "wed") {
-                        if (hr == 6 && min == 30) {
+                        if ((hr == 6 && min == 30) || friTomHeader) {
                             colour = '#fc8621';
 
                             tableHeader = "**Wednesday's TimeTable**" +
@@ -975,7 +1076,7 @@ bot.on('message', message => {
                     }
                 case 4:
                     if (day == "4" || thisSaturday == "thur") {
-                        if (hr == 6 && min == 30) {
+                        if ((hr == 6 && min == 30) || friTomHeader) {
                             colour = '#9d0191';
 
                             tableHeader = "**Thursday's TimeTable**" +
@@ -1048,76 +1149,10 @@ bot.on('message', message => {
                         }
                         break;
                     }
-                case 5:
-                    if (day == "5" || thisSaturday == "fri") {
-                        if (hr == 6 && min == 30) {
-                            colour = '#0099ff';
 
-                            tableHeader = "**Friday's TimeTable**" +
-                                "\n" + "\n" + "1) **8:50-9:40am** -- TOE(242)/ Elective VI" +
-                                "\n" + "\n" + "2) **9:50-10:40am** -- TOE(242)/ IT Essentials(377)" +
-                                "\n" + "\n" + "3) **11:00-11:50am** -- Operations Research(411)" +
-                                "\n" + "\n" + "4) **12:00-12:50pm** -- IT Essentials(377)" +
-                                "\n" + "\n" + "5) **2:00-2:50pm** -- Elective VI" +
-                                "\n" + "\n" + "6) **3:00-3:50pm** -- Control Engineering(402)" +
-                                "\n" + "\n" + "7) **4:00-4:50pm** -- Operations Research(411)" + "\n" + "."
-
-                            tableTodaySValue = 1
-                        } else if (hr == 8 && min == 40) {
-                            colour = '#0099ff';
-                            slot = 1;
-                            periodName = "TOE(242)/ Elective VI"
-                            Stime = "8:50-9:40am"
-                            tableValue = 1
-                        } else if (hr == 9 && min == 40) {
-                            colour = '#0099ff';
-                            slot = 2;
-                            periodName = "TOE(242)/ IT Essentials(377)"
-                            Stime = "9:50-10:40am"
-                            tableValue = 1
-                        } else if (hr == 10 && min == 50) {
-                            colour = '#0099ff';
-                            slot = 3;
-                            if (oprLink1 == "none" && day != 6) { oprLink1 = "https://bit.ly/OPfriLink1MsTeams" } else if (oprLink1 == "none" && day == 6) { oprLink1 = "No Link😝 (not entered)" }
-                            periodName = "Operations Research(411)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + oprLink1
-                            Stime = "11:00-11:50am"
-                            tableValue = 1
-                        } else if (hr == 11 && min == 50) {
-                            colour = '#0099ff';
-                            slot = 4;
-                            periodName = "IT Essentials(377)"
-                            Stime = "12:00-12:50pm"
-                            tableValue = 1
-                        } else if (hr == 13 && min == 50) {
-                            colour = '#0099ff';
-                            slot = 5;
-                            periodName = "Elective VI"
-                            Stime = "2:00-2:50pm"
-                            tableValue = 1
-                        } else if (hr == 14 && min == 50) {
-                            colour = '#0099ff';
-                            slot = 6;
-                            if (ControlELink1st == "none") { ControlELink1st = "https://bit.ly/CEfriLink1MsTeams" }
-                            periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + ControlELink1st
-                            Stime = "3:00-3:50pm"
-                            tableValue = 1
-                        } else if (hr == 15 && min == 50) {
-                            colour = '#0099ff';
-                            slot = 7;
-                            if (oprLink2 == "none" && day != 6) { oprLink2 = "https://bit.ly/OPfriLink2MsTeams" } else if (oprLink2 == "none" && day == 6) { oprLink2 = "No Link😝 (not entered)" }
-                            periodName = "Operations Research(411)" + "\n" + "\n" + "For Mech C & D Only👇" + "\n" + oprLink2
-                            Stime = "4:00-4:50pm"
-                            tableValue = 1
-                            oprLink1 = "none"
-                            oprLink2 = "none"
-                            ControlELink1st = "none"
-                            ControlELink2st = "none"
-                        }
-                        break;
-                    }
                 case 10:
                     if (day == "1" || thisSaturday == "test") {
-                        if (hr == 21 && min == 32) {
+                        if ((hr == 6 && min == 30) || friTomHeader) {
                             colour = '#0099ff';
 
                             tableHeader = "**Friday's TimeTable**" +
@@ -1197,13 +1232,14 @@ bot.on('message', message => {
                 onlyPeriod = onlyPeriodSplit[0]
 
                 setTimeout(() => {
-                    bot.channels.cache.get('787705631632523285').send("🔔-**" + onlyPeriod + "**" + "\n" + "🤘Guyzz...Class Started !!").then(msg => {
+                    bot.channels.cache.get('787705631632523285').send("🔔-**" + onlyPeriod + "**" + "\n" + "🤘Class Started...Guyzz!!").then(msg => {
                         msg.delete({ timeout: 60000 })
                     });
                 }, 600000)
 
             }
             if (tableTodaySValue == 1) {
+                friTomHeader = false;
                 const Period = new Discord.MessageEmbed()
                     .setColor(colour)
 
@@ -1309,5 +1345,4 @@ bot.on('messageReactionRemove', async(reaction, user) => {
 
 
 })
-
 bot.login(process.env.TOKEN);
