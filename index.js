@@ -638,8 +638,8 @@ bot.on('message', message => {
                 .setTitle('Lecture Recordings✌!!   (#lecture)')
                 .setDescription("\n" + "[Control Engineering](https://bit.ly/ceLectureRecordings)" + " -- [Notes](https://drive.google.com/drive/folders/1RJRIEU-ZBlO-jbQ0od68lpqKz4l2URRO?usp=sharing) " + "\n" + "\n" +
                     "[Operations Research for Mech C & D](https://bit.ly/oprLectureRecordings)" + " -- [Notes](https://drive.google.com/drive/folders/1F7o3tXRK_SuQzor8I59mqkeBK9AR58nf?usp=sharing) " + "\n" + "\n" +
-                    "[Lean Manufacturing](https://bit.ly/leLectureVideos)" + " -- [Notes](https://drive.google.com/drive/folders/1POq3ztXv2OOEjtKV_p7hol8fQLX9sIJ-?usp=sharing) " + "\n" + "\n" +
-                    "[Advanced Materials & Processes](https://bit.ly/ampLectureRecordings)" + " -- [Notes](https://drive.google.com/drive/folders/1eWpRbPHj5ihvp81B-ltlE0O70w1gqiSr?usp=sharing) " + "\n" + ".")
+                    "[Lean Manufacturing](https://bit.ly/leLectureVideos)" + " -- [Notes](https://drive.google.com/drive/folders/1eWpRbPHj5ihvp81B-ltlE0O70w1gqiSr?usp=sharing) " + "\n" + "\n" +
+                    "[Advanced Materials & Processes](https://bit.ly/ampLectureRecordings)" + " -- [Notes](https://drive.google.com/drive/folders/1POq3ztXv2OOEjtKV_p7hol8fQLX9sIJ-?usp=sharing) " + "\n" + ".")
                 .setFooter("🕉 Namah Shivaya")
             message.channel.send(lectureVideos).then(sentEmbed => {
                 sentEmbed.react("790605687641735188")
