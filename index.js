@@ -1039,7 +1039,7 @@ bot.on('message', message => {
                         } else if (hr == 11 && min == 50) {
                             colour = '#fc8621';
                             slot = 4;
-                            periodName = "IT Essentials(377)"
+                            periodName = "Elective VI/ IT Essentials(377)"
                             Stime = "12:00-12:50pm"
                             tableValue = 1
                         } else if (hr == 13 && min == 50) {
