@@ -820,9 +820,9 @@ bot.on('message', message => {
                             ControlELink1st = "none"
                             ControlELink2st = "none"
 
-                        } else if ((hr == 19 && min == 30) && day != 6) {
+                        } else if ((hr == 20 && min == 10) && day != 6) {
                             message.channel.send('**' + "```diff" + '\n' + "+ Tommorow is a Working Day!!" + "\n" + "```" + '**')
-                            if (thisSaturday = "fri") {
+                            if (thisSaturday == "fri") {
                                 colour = '#0099ff';
 
                                 tableHeader = "**Friday's TimeTable**" +
