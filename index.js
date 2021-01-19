@@ -26,7 +26,7 @@ bot.on('ready', () => {
         trigger = new Date();
         second = trigger.getSeconds();
         if (second == 0) {
-            bot.channels.cache.get('787705631632523285').send('Timetable ON')
+            bot.channels.cache.get('787705631632523285').send('Timetable OFF')
             bot.channels.cache.get('787705631632523285').send('Dyno Cycling (Heroku server restart)').then(msg => {
                 msg.delete({ timeout: 120000 })
                 bot.channels.cache.get('787217077239808011').send('Dyno Cycling (server restart)')
@@ -427,21 +427,7 @@ bot.on('message', message => {
 
     anboQuestionList.forEach(element => {
 
-        if (spSearchkeywordpara[0] == "#" || anboSearchId == "782069343478480916") {
-            questionFromUser = questionFromUser.substring(2)
-            re = RegExp(questionFromUser, "g");
-            resString = element.match(re)
-            console.log(resString)
-            if (resString == null) {
-                spfreepass = false
-
-            } else {
-                spfreepass = true;
-
-            }
-
-
-        }
+        
 
 
         if ((element == questionFromUser) || spfreepass) {
@@ -663,7 +649,7 @@ bot.on('message', message => {
 bot.on('message', message => {
     words = message.content.split(" ");
 
-    if (("Exam Time" == message.content || "TT Pause" == message.content) && (message.channel.id == '787705631632523285' || message.channel.id == '787561621899837461' || message.channel.id == '787217077239808011')) {
+    if (("Timetable OFF" == message.content ||"Exam Time" == message.content || "TT Pause" == message.content) && (message.channel.id == '787705631632523285' || message.channel.id == '787561621899837461' || message.channel.id == '787217077239808011')) {
         message.channel.send("TimeTable is paused");
         clearInterval(interval);
     }
