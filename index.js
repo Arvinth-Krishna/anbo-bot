@@ -26,7 +26,7 @@ bot.on('ready', () => {
         trigger = new Date();
         second = trigger.getSeconds();
         if (second == 0) {
-            bot.channels.cache.get('787705631632523285').send('Timetable OFF')
+            bot.channels.cache.get('787705631632523285').send('Timetable ON')
             bot.channels.cache.get('787705631632523285').send('Dyno Cycling (Heroku server restart)').then(msg => {
                 msg.delete({ timeout: 120000 })
                 bot.channels.cache.get('787217077239808011').send('Dyno Cycling (server restart)')
