@@ -18,7 +18,6 @@ oprLink1 = "none"
 oprLink2 = "none"
 friTomHeader = false;
 
-
 bot.on('ready', () => {
     console.log("Bot is online!")
     dyno = setInterval(() => {
@@ -427,7 +426,21 @@ bot.on('message', message => {
 
     anboQuestionList.forEach(element => {
 
-        
+        if (spSearchkeywordpara[0] == "#" || anboSearchId == "782069343478480916") {
+            questionFromUser = questionFromUser.substring(2)
+            re = RegExp(questionFromUser, "g");
+            resString = element.match(re)
+            console.log(resString)
+            if (resString == null) {
+                spfreepass = false
+
+            } else {
+                spfreepass = true;
+
+            }
+
+
+        }
 
 
         if ((element == questionFromUser) || spfreepass) {
@@ -649,7 +662,7 @@ bot.on('message', message => {
 bot.on('message', message => {
     words = message.content.split(" ");
 
-    if (("Timetable OFF" == message.content ||"Exam Time" == message.content || "TT Pause" == message.content) && (message.channel.id == '787705631632523285' || message.channel.id == '787561621899837461' || message.channel.id == '787217077239808011')) {
+    if (("Exam Time" == message.content || "TT Pause" == message.content) && (message.channel.id == '787705631632523285' || message.channel.id == '787561621899837461' || message.channel.id == '787217077239808011')) {
         message.channel.send("TimeTable is paused");
         clearInterval(interval);
     }
@@ -790,7 +803,8 @@ bot.on('message', message => {
                         } else if (hr == 14 && min == 50) {
                             colour = '#0099ff';
                             slot = 6;
-                            periodName = "Control Engineering(402)"
+                            if (ControlELink1st == "none") { ControlELink1st = "http://bit.ly/CEunit2friLink1" }
+                            periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + ControlELink1st
                             Stime = "3:00-3:50pm"
                             tableValue = 1
 
@@ -806,7 +820,7 @@ bot.on('message', message => {
                             ControlELink1st = "none"
                             ControlELink2st = "none"
 
-                        } else if ((hr == 19 && min == 0) && day != 6 && thisSaturday != "none") {
+                        } else if ((hr == 19 && min == 0) && day != 6) {
                             message.channel.send('**' + "```diff" + '\n' + "+ Tommorow is a Working Day!!" + "\n" + "```" + '**')
                             if (thisSaturday == "fri") {
                                 colour = '#0099ff';
@@ -866,8 +880,8 @@ bot.on('message', message => {
                         } else if (hr == 10 && min == 50) {
                             colour = '#ff4646';
                             slot = 3;
-
-                            periodName = "Control Engineering(402)"
+                            if (ControlELink1st == "none") { ControlELink1st = "http://bit.ly/CEunit2monLink1" }
+                            periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + ControlELink1st
                             Stime = "11:00-11:50am"
                             tableValue = 1
                         } else if (hr == 11 && min == 50) {
@@ -885,7 +899,8 @@ bot.on('message', message => {
                         } else if (hr == 14 && min == 50) {
                             colour = '#ff4646';
                             slot = 6;
-                            periodName = "Control Engineering(402)"
+                            if (ControlELink2st == "none") { ControlELink2st = "http://bit.ly/CEunit2monLink2" }
+                            periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + ControlELink2st
                             Stime = "3:00-3:50pm"
                             tableValue = 1
                         } else if ((hr == 17 && min == 30) && day != 6) {
@@ -954,7 +969,8 @@ bot.on('message', message => {
                         } else if (hr == 13 && min == 50) {
                             colour = '#61b15a';
                             slot = 5;
-                            periodName = "Control Engineering(402)"
+                            if (ControlELink1st == "none") { ControlELink1st = "http://bit.ly/CEunit2tueLink1" }
+                            periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + ControlELink1st
                             Stime = "2:00-2:50pm"
                             tableValue = 1
                         } else if (hr == 14 && min == 50) {
@@ -1030,7 +1046,8 @@ bot.on('message', message => {
                             colour = '#fc8621';
                             slot = 5;
                             Stime = "2:00-2:50pm"
-                            periodName = "Control Engineering(402)"
+                            if (ControlELink1st == "none") { ControlELink1st = "http://bit.ly/CEunit2wedLink1" }
+                            periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + ControlELink1st
                             tableValue = 1
                         } else if (hr == 14 && min == 50) {
                             colour = '#fc8621';
@@ -1054,7 +1071,8 @@ bot.on('message', message => {
                         } else if (hr == 15 && min == 50) {
                             colour = '#fc8621';
                             slot = 7;
-                            periodName = "Control Engineering(402)"
+                            if (ControlELink2st == "none") { ControlELink2st = "http://bit.ly/CEunit2wedLink2" }
+                            periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + ControlELink2st
                             Stime = "4:00-4:50pm"
                             tableValue = 1
                         }
@@ -1128,7 +1146,8 @@ bot.on('message', message => {
                         } else if (hr == 15 && min == 50) {
                             colour = '#9d0191';
                             slot = 7;
-                            periodName = "Control Engineering(402)"
+                            if (ControlELink1st == "none") { ControlELink1st = "http://bit.ly/CEunit2thursLink1" }
+                            periodName = "Control Engineering(402)" + "\n" + "\n" + "For all Sections👇" + "\n" + ControlELink1st
                             Stime = "4:00-4:50pm"
                             tableValue = 1
                         }
@@ -1330,5 +1349,4 @@ bot.on('messageReactionRemove', async(reaction, user) => {
 
 
 })
-
 bot.login(process.env.TOKEN);
