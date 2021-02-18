@@ -20,23 +20,7 @@ friTomHeader = false;
 
 bot.on('ready', () => {
     console.log("Bot is online!")
-    dyno = setInterval(() => {
-
-        trigger = new Date();
-        second = trigger.getSeconds();
-        if (second == 0) {
-            bot.channels.cache.get('787705631632523285').send('Exam Time')
-            
-            bot.channels.cache.get('787705631632523285').send("Let's Roast Xams🔥")
-                
-                bot.channels.cache.get('787217077239808011').send('Dyno Cycling (server restart)')
-
-
-                console.log("dyno sec value " + second)
-                clearInterval(dyno)
-            
-        }
-    }, 1000)
+    bot.channels.cache.get('781809921309278208').send("Let's Roast Xams🔥🍳")
 })
 
 bot.on('message', message => {
