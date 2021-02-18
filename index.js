@@ -34,7 +34,7 @@ bot.on('ready', () => {
 
                 console.log("dyno sec value " + second)
                 clearInterval(dyno)
-            })
+            
         }
     }, 1000)
 })
