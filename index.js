@@ -20,8 +20,7 @@ friTomHeader = false;
 
 bot.on('ready', () => {
     console.log("Bot is online!")
-    bot.channels.cache.get('781809921309278208').send("Let's Roast Xams🔥🍳")
-})
+    })
 
 bot.on('message', message => {
     if (message.author.bot) return;
