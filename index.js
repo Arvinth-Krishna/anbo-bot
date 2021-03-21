@@ -630,8 +630,8 @@ bot.on('message', message => {
 
             })
             break;
-        case "ttecho":
-            bot.channels.cache.get('787705631632523285').send(tabelEchoHeader);
+        case "echo":
+            message.channel.send("dgmsgDelete");
             break;
 
 
